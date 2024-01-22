@@ -204,20 +204,107 @@ public class Main
 
     static void pattern16()
     {
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 5; j > i ; j--)
+                System.out.print(" ");
+            String num = "" + (int)Math.pow(11, i);
+            for (int j = 0; j < num.length(); j++)
+                System.out.print(num.charAt(j) + " ");
+            System.out.println();
+        }
+    }
+
+    static void pattern17(int n)
+    {
+        for (int i = 1; i <= 2*n-1; i++)
+        {
+            int k = i > n ? 2*n-i : i;
+            for (int j = k; j < n; j++)
+                System.out.print(" ");
+            for (int j = k; j > 1 ; j--)
+                System.out.print(j);
+            for (int j = 1; j <= k ; j++)
+                System.out.print(j);
+            System.out.println();
+        }
+    }
+
+    static void pattern18()
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            int k = i <= 5 ? 2 * (i - 1) : 2 * (10 - i);
+            for (int j = 1; j <= 10 - k; j+=2)
+                System.out.print("*");
+            for (int j = 1; j <= k; j++)
+                System.out.print(" ");
+            for (int j = 1; j <= 10 - k; j+=2)
+                System.out.print("*");
+            System.out.println();
+        }
+    }
+
+    static void pattern19()
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            int k = i <= 5 ? 10 - 2 * i : 10 - 2 * (10 - i);
+            for (int j = 1; j <= 10 - k; j+=2)
+                System.out.print("*");
+            for (int j = 1; j <= k; j++)
+                System.out.print(" ");
+            for (int j = 1; j <= 10 - k; j+=2)
+                System.out.print("*");
+            System.out.println();
+        }
+    }
+
+    static void pattern20()
+    {
         for (int i = 1; i <= 5; i++)
         {
-            for (int j = i; j <= 5; j++)
-                System.out.print(" ");
-            System.out.println("1 ");
-            for (int j = 1; j < ; j++)
+            if (i == 1 || i == 5)
             {
-
+                for (int j = 1; j <= 4; j++)
+                    System.out.print("*");
+                System.out.println();
+            }
+            else
+            {
+                System.out.println("*  *");
             }
         }
     }
 
+    static void pattern21()
+    {
+        int k = 1;
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print(k++ + " ");
+                if(k <= 10)
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    static void pattern22()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = 1; j <= i; j++)
+                System.out.print((i + j + 1) % 2 + " ");
+            System.out.println();
+        }
+    }
+    
     public static void main(String[] args)
     {
-        pattern16();
+        pattern22();
     }
 }
