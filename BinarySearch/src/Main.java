@@ -1,3 +1,8 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main
 {
     //  SEARCH IN 2D ARRAY
@@ -101,11 +106,88 @@ public class Main
         return res;
     }
 
+   /* public int minEatingSpeed(int[] piles, int h)
+    {
+        Arrays.sort(piles);
+        int k = h - piles.length;
+        if(k == 0)
+            return piles[piles.length - 1];
+        else
+        {
+            int res = piles[piles.length - k];
+            if(piles[res+1] > 2 * res)
+                res =
+        }
+    }*/
+
+    public static int[] findRightInterval(int[][] arr)
+    {
+        int len = arr.length;
+        if(len == 1)
+            return new int[]{-1};
+        else
+        {
+            int res[] = new int[len];
+            for (int i = 0; i < len; i++)
+            {
+                res[i] = -1;
+                if(arr[i][1] == arr[i][0])
+                {
+                    res[i] = i;
+                    continue;
+                }
+                int end = arr[i][1];
+                int min = 100000;
+                for (int j = 0; j < len; j++)
+                {
+                    if (i == j)
+                        continue;
+                    int start = arr[j][0];
+                    if (end <= start && min >= start)
+                    {
+                        res[i] = j;
+                        min = start;
+                    }
+                }
+            }
+            return res;
+        }
+    }
+    public static String restoreString(String s, int[] indices)
+    {
+        char ch[] = new char[indices.length];
+        for (int i = 0; i < indices.length; i++)
+        {
+            ch[indices[i]] = s.charAt(i);
+        }
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < indices.length; i++)
+        {
+            str.append(ch[i]);
+        }
+        return str.toString();
+
+    }
+
+    public static int singleNonDuplicate(int[] arr)
+    {
+        int start = 0, end = arr.length - 1;
+        while (start < end)
+        {
+            int mid = start + (end - start) / 2;
+            if(mid % 2 == 1)
+                mid--;
+            if(arr[mid] != arr[mid+1])
+                end = mid;
+            else
+                start = mid + 2;
+        }
+        return arr[start];
+    }
+
     public static void main(String[] args)
     {
-
-        int arr[] = {2,7,11,15};
-        int res[] = twoSum(arr, 26);
-        System.out.println(res[0] + " " + res[1]);
+        int arr[] ={1,1,2,3,3,4,4,8,8};
+        System.out.println(singleNonDuplicate(arr)); ;
     }
 }

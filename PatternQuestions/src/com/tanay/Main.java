@@ -302,9 +302,17 @@ public class Main
             System.out.println();
         }
     }
-    
+    public static int fib(int n)
+    {
+        if(n == 0 )
+            return 0;
+        if(n > 2)
+            return fib(n-1) + fib(n-2);
+        else
+            return 1;
+    }
     public static void main(String[] args)
     {
-        pattern22();
+        System.out.println(fib(8));;
     }
 }
