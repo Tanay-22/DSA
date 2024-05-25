@@ -58,10 +58,30 @@ public class Easy
         }
     }
 
+    static String removeA(String s, int i)
+     {
+        if(i >= s.length())
+            return "";
 
+        if(s.charAt(i) != 'a')
+            return s.charAt(i) + removeA(s, i+1);
+        else
+            return removeA(s, i+1);
+    }
+
+    static String removeString(String s, String r)
+    {
+        if(s.isEmpty())
+            return "";
+
+        if(s.startsWith(r))
+            return removeString(s.substring(r.length()), r);
+        else
+            return s.charAt(0) + removeString(s.substring(1), r);
+    }
 
     public static void main(String[] args)
     {
-
+        System.out.println(removeString("reappletree",  "apple"));
     }
 }
