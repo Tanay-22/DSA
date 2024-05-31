@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/BitwiseOperators/BitwiseOperators.iml" filepath="$PROJECT_DIR$/BitwiseOperators/BitwiseOperators.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DSA.iml" filepath="$PROJECT_DIR$/.idea/DSA.iml" />
       <module fileurl="file://$PROJECT_DIR$/Leetcode/Leetcode.iml" filepath="$PROJECT_DIR$/Leetcode/Leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LinkedList/LinkedList.iml" filepath="$PROJECT_DIR$/LinkedList/LinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/PatternQuestions/PatternQuestions.iml" filepath="$PROJECT_DIR$/PatternQuestions/PatternQuestions.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecurisonQuestions/RecurisonQuestions.iml" filepath="$PROJECT_DIR$/RecurisonQuestions/RecurisonQuestions.iml" />
       <module fileurl="file://$PROJECT_DIR$/Recursion/Recursion.iml" filepath="$PROJECT_DIR$/Recursion/Recursion.iml" />

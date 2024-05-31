@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c42423ee-3d32-4a0d-bddf-365dfa076cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backtracking/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/Backtracking.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/src/AllPaths.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/src/Maze.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backtracking/src/NKnights.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/recursion/RecursionQuestions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/strings/StringQues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RecurisonQuestions/src/subsetquestions/Subset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LinkedList/LinkedList.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LinkedList/src/LL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LinkedList/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recursion/out/production/Recursion/easy/Easy.class" beforeDir="false" afterPath="$PROJECT_DIR$/Recursion/out/production/Recursion/easy/Easy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recursion/src/easy/Easy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Recursion/src/easy/Easy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/backtracking/Backtracking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/backtracking/Backtracking.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +42,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/DSA&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "C:/DSA"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -94,14 +87,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java</url>
-          <line>237</line>
-          <properties class="backtracking.Backtracking" method="combineHelper">
+          <line>436</line>
+          <properties class="backtracking.Backtracking" method="findKthBitHelper">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
+          <line>48</line>
+          <properties class="LL.LL" method="reverseList">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
+          <line>95</line>
+          <properties class="LL.LL" method="mergeTwoLists">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DSA$Backtracking.ic" NAME="Backtracking Coverage Results" MODIFIED="1717001179368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>backtracking.*</FILTER>
+    </SUITE>
   </component>
 </project>

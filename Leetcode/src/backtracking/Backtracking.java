@@ -289,11 +289,218 @@ public class Backtracking
         }
     }
 
+    //37. Sudoku Solver
+    public static void solveSudoku(char[][] board)
+    {
+        boolean f = solveSudokuHelper(board);
+    }
+    private static boolean solveSudokuHelper(char[][] board)
+    {
+        int n = board.length;
+        int row = -1;
+        int col = -1;
+
+        boolean emptyLeft = true;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if(board[i][j] == '.')
+                {
+                    row = i;
+                    col = j;
+                    emptyLeft = false;
+                    break;
+                }
+            }
+            if(!emptyLeft)
+                break;
+        }
+        if(emptyLeft)
+            return true;
+
+        for (char number = '1'; number <= '9'; number++)
+        {
+            if(isSudokuSafe(board, row, col, number))
+            {
+                board[row][col] = number;
+
+                if (solveSudokuHelper(board))
+                    return true;
+                else
+                    board[row][col] = '.';
+            }
+        }
+        return false;
+    }
+    private static boolean isSudokuSafe(char board[][], int row, int col, char num)
+    {
+        for (int i = 0; i < board.length; i++)
+        {
+            if(board[row][i] == num || board[i][col] == num)
+                return false;
+        }
+
+
+        int sqrt = (int)Math.sqrt(board.length);
+        int rowStart = row - row % sqrt;
+        int colStart = col - col % sqrt;
+
+        for (int r = rowStart; r < rowStart + sqrt; r++)
+        {
+            for (int c = colStart; c < colStart + sqrt; c++)
+            {
+                if(board[r][c] == num)
+                    return false;
+            }
+        }
+        return true;
+
+    }
+
+    //79. Word Search
+    public static boolean exist(char[][] board, String word)
+    {
+        int m = board.length, n = board[0].length;
+
+        if(m * n < word.length())
+            return false;
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if(board[i][j] == word.charAt(0))
+                {
+                    boolean flag[][] = new boolean[m][n];
+                    if(existHelper(board, i, j, word, 0, flag))
+                        return true;
+                }
+            }
+        }
+
+        return false;
+    }
+    private static boolean existHelper(char board[][], int row, int col, String word, int index, boolean flag[][])
+    {
+        if(index == word.length())
+            return true;
+
+        if (row < 0 || row >= board.length || col < 0 || col >= board[0].length ||
+                board[row][col] != word.charAt(index) || flag[row][col]) {
+            return false;
+        }
+
+        flag[row][col] = true;
+
+        boolean found =
+                existHelper(board, row + 1, col, word, index + 1, flag) ||
+                existHelper(board, row - 1, col, word, index + 1, flag) ||
+                existHelper(board, row, col + 1, word, index + 1, flag) ||
+                existHelper(board, row, col - 1, word, index + 1, flag);
+
+        flag[row][col] = false;
+
+        return found;
+    }
+
+    //494. Target Sum
+    public static int findTargetSumWays(int[] nums, int target)
+    {
+        boolean flag[] = new boolean[nums.length];
+
+        return findTargetSumWaysHelper(nums, target, 1, nums[0]) +
+                findTargetSumWaysHelper(nums, target, 1, -nums[0]);
+
+    }
+    private static int findTargetSumWaysHelper(int arr[], int target, int index, int sum)
+    {
+        if(index == arr.length)
+        {
+           if(sum == target)
+               return 1;
+           else
+               return 0;
+        }
+
+
+        return findTargetSumWaysHelper(arr, target, index+1, sum + arr[index]) +
+                findTargetSumWaysHelper(arr, target, index+1, sum - arr[index]);
+    }
+
+    //1545. Find Kth Bit in Nth Binary String
+    public static char findKthBit(int n, int k)
+    {
+        StringBuilder s = new StringBuilder("0");
+        return findKthBitHelper(n-1, k, s);
+    }
+    private static char findKthBitHelper(int n, int k, StringBuilder s)
+    {
+        while(n-- > 0)
+        {
+            StringBuilder st = new StringBuilder(s.toString());
+            inverse(s);
+            s.reverse();
+
+            st.append("1" + s);
+            s = st;
+        }
+
+        return s.charAt(k - 1);
+    }
+    private static void inverse(StringBuilder s)
+    {
+        for (int i = 0; i < s.length(); i++)
+        {
+            char c = s.charAt(i);
+            if (c == '0')
+                s.setCharAt(i, '1');
+            else if (c == '1')
+                s.setCharAt(i, '0');
+        }
+    }
+
+    //779. K-th Symbol in Grammar
+    public static int kthGrammar(int n, int k)
+    {
+        if(n == 1)
+            return 0;
+
+        int mid = (int)Math.pow(2, n-1) / 2;
+
+        if(k <= mid)
+            return kthGrammar(n-1, k);
+        else
+            return 1 - kthGrammar(n-1, k - mid);
+
+    }
+
+    //1922. Count Good Numbers
+    public static int countGoodNumbers(long n)
+    {
+        int mod = (int) (1e9) + 7;
+
+        long nEven = (n + 1) / 2, nOdd = n / 2;
+
+        long result = countGoodNumbersHelper(4, nOdd, mod) * countGoodNumbersHelper(5, nEven, mod);
+        return (int)(result % mod);
+    }
+    private static long countGoodNumbersHelper(int multiplier, long count, int mod)
+    {
+        if(count == 0)
+            return 1;
+
+        long pow = countGoodNumbersHelper(multiplier, count/2, mod);
+
+        if((count & 1) == 0)
+            return ((pow % mod) * (pow % mod)) % mod;
+        else
+            return (multiplier * (pow % mod) * (pow % mod)) % mod;
+    }
+
 
     public static void main(String[] args)
     {
-
-        List<List<Integer>> ans = combinationSum3(2, 18);
-        ans.stream().forEach(System.out::println);
+        System.out.println(countGoodNumbers(27l));
     }
 }
