@@ -1,5 +1,9 @@
 package math;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class MathQues
 {
     //  7. Reverse Integer
@@ -238,13 +242,22 @@ public class MathQues
         return digits;
     }
 
+    //1344. Angle Between Hands of a Clock
+    public static double angleClock(int hour, int minutes)
+    {
+        if(hour == 12)
+            hour = 0;
+        double hourAngle = (hour + minutes / 60.0) * 30;
+        double minuteAngle = minutes * 6;
+
+        double result = Math.abs(hourAngle - minuteAngle);
+        return Math.min(result, 360 - result);
+    }
+
+
+
     public static void main(String[] args)
     {
-        int arr[] = {9, 9, 9};
-        arr = plusOne(arr);
-        for (int i = 0; i < arr.length; i++)
-        {
-            System.out.print(arr[i] +" ");
-        }
+        System.out.println();
     }
 }

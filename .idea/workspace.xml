@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c42423ee-3d32-4a0d-bddf-365dfa076cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LinkedList/LinkedList.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LinkedList/src/LL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LinkedList/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/AllOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/BrowserHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/MyLinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/backtracking/Backtracking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/backtracking/Backtracking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/math/MathQues.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/math/MathQues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LL$ListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/LL/LL$ListNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/math/MathQues.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/math/MathQues.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,15 +41,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/DSA"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DSA&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -95,29 +94,130 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
-          <line>48</line>
-          <properties class="LL.LL" method="reverseList">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/MyLinkedList.java</url>
+          <line>29</line>
+          <properties class="LL.MyLinkedList" method="getNode">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
-          <line>95</line>
-          <properties class="LL.LL" method="mergeTwoLists">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/MyLinkedList.java</url>
+          <line>45</line>
+          <properties class="LL.MyLinkedList" method="get">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="17" />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/MyLinkedList.java</url>
+          <line>53</line>
+          <properties class="LL.MyLinkedList" method="addAtHead">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/MyLinkedList.java</url>
+          <line>105</line>
+          <properties class="LL.MyLinkedList" method="deleteFirst">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/MyLinkedList.java</url>
+          <line>130</line>
+          <properties class="LL.MyLinkedList" method="deleteAtIndex">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/MyLinkedList.java</url>
+          <line>65</line>
+          <properties class="LL.MyLinkedList" method="addAtTail">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/BrowserHistory.java</url>
+          <line>37</line>
+          <properties class="LL.BrowserHistory" method="back">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/BrowserHistory.java</url>
+          <line>54</line>
+          <properties class="LL.BrowserHistory" method="forward">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/AllOne.java</url>
+          <line>25</line>
+          <properties class="LL.AllOne" method="inc">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/AllOne.java</url>
+          <line>44</line>
+          <properties class="LL.AllOne" method="dec">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/AllOne.java</url>
+          <line>60</line>
+          <properties class="LL.AllOne" method="getMaxKey">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/AllOne.java</url>
+          <line>78</line>
+          <properties class="LL.AllOne" method="getMinKey">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
+          <line>417</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DSA$MathQues.ic" NAME="MathQues Coverage Results" MODIFIED="1717346552243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>math.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/DSA$Backtracking.ic" NAME="Backtracking Coverage Results" MODIFIED="1717001179368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>backtracking.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DSA$LL.ic" NAME="LL Coverage Results" MODIFIED="1717323977950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>LL.*</FILTER>
     </SUITE>
   </component>
 </project>
