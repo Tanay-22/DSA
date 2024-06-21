@@ -428,40 +428,6 @@ public class LL
         return newHead.next;
     }
 
-
-
-    public static ListNode createLL(int arr[])
-    {
-        ListNode head = null;
-        ListNode current = null;
-        for (int val : arr)
-        {
-            if (head == null)
-            {
-                head = new ListNode(val);
-                current = head;
-            }
-            else
-            {
-                current.next = new ListNode(val);
-                current = current.next;
-            }
-        }
-        return head;
-    }
-
-    public static void displayLL(ListNode head)
-    {
-        ListNode current = head;
-        while (current != null)
-        {
-            System.out.print(current.val + " ");
-            current = current.next;
-        }
-        System.out.println();
-
-    }
-
     //86. Partition List
     public static ListNode partition(ListNode head, int x)
     {
@@ -533,8 +499,93 @@ public class LL
         return head.next;
     }
 
+    //1171. Remove Zero Sum Consecutive Nodes from Linked List
+    public static ListNode removeZeroSumSublists(ListNode head)
+    {
+        ListNode h = head;
+        while(h != null)
+        {
+            removeZeroSumSublistsHelper(h);
+            h = h.next;
+        }
+
+        while (head != null && head.val == 0)
+            head = head.next;
+        if(head == null)
+            return null;
+        h = head;
+        while(h.next != null)
+        {
+            if(h.next.val == 0)
+                h.next = h.next.next;
+            else
+                h = h.next;
+        }
+
+        return head;
+    }
+    private static void removeZeroSumSublistsHelper(ListNode head)
+    {
+        int sum = 0;
+        ListNode end = null, h = head;
+        while (h != null)
+        {
+            sum += h.val;
+            h = h.next;
+
+            if(sum == 0)
+            {
+                end = h;
+                h = head;
+                while (h != end)
+                {
+                    h.val = 0;
+                    h = h.next;
+                }
+                break;
+            }
+        }
+    }
+
+
     public static void main(String[] args)
     {
+        int arr[] = {1,3,2,-3,-2,5,5,-5,1};
+        ListNode head = createLL(arr);
+
+        head = removeZeroSumSublists(head);
+        displayLL(head);
+    }
+
+    public static ListNode createLL(int arr[])
+    {
+        ListNode head = null;
+        ListNode current = null;
+        for (int val : arr)
+        {
+            if (head == null)
+            {
+                head = new ListNode(val);
+                current = head;
+            }
+            else
+            {
+                current.next = new ListNode(val);
+                current = current.next;
+            }
+        }
+        return head;
+    }
+
+    public static void displayLL(ListNode head)
+    {
+        ListNode current = head;
+        while (current != null)
+        {
+            System.out.print(current.val + " ");
+            current = current.next;
+        }
+        System.out.println();
 
     }
 }

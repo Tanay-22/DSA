@@ -29,13 +29,9 @@ public class MergeSortInPlace
                 mix[k++] = arr[j++];
         }
         while(i < mid)
-        {
             mix[k++] = arr[i++];
-        }
         while(j < end)
-        {
             mix[k++] = arr[j++];
-        }
         for (int l = 0; l < mix.length; l++)
             arr[start + l] = mix[l];
     }

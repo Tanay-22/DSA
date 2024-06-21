@@ -55,9 +55,30 @@ public class Search
         }
         return end;
     }
+
+    //754. Reach a Number
+    public static int reachNumber(int target)
+    {
+        int count = 1;
+        int start = 1, end = Math.abs(target);
+
+        while(start < end)
+        {
+            count++;
+
+            if(start + count == end)
+                return count;
+
+            if(start + count > end)
+                start -= count;
+            else
+                start += count;
+        }
+        return count;
+    }
     public static void main(String[] args)
     {
         int arr[] = {2,2};
-        System.out.println(minEatingSpeed(arr, 4));
+        System.out.println(reachNumber(5));
     }
 }

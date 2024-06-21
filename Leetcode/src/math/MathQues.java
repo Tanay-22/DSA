@@ -258,6 +258,6 @@ public class MathQues
 
     public static void main(String[] args)
     {
-        System.out.println();
+        System.out.println((char) ('a' + 3 + 5 + 9));
     }
 }

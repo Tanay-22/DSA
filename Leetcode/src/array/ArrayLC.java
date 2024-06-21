@@ -33,9 +33,10 @@ public class ArrayLC
         return median;
     }
 
+
+
     public static void main(String[] args)
     {
-        int arr1[] = {1,3}, arr2[] = {2};
-        System.out.println(findMedianSortedArrays(arr1, arr2));
+
     }
 }

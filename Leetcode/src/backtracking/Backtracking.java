@@ -1,6 +1,7 @@
 package backtracking;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Backtracking
 {
@@ -387,9 +388,8 @@ public class Backtracking
             return true;
 
         if (row < 0 || row >= board.length || col < 0 || col >= board[0].length ||
-                board[row][col] != word.charAt(index) || flag[row][col]) {
+                board[row][col] != word.charAt(index) || flag[row][col])
             return false;
-        }
 
         flag[row][col] = true;
 
@@ -498,9 +498,38 @@ public class Backtracking
             return (multiplier * (pow % mod) * (pow % mod)) % mod;
     }
 
+    //90. Subsets II
+    public static List<List<Integer>> subsetsWithDup(int arr[])
+    {
+        Arrays.sort(arr);
+        Set<List<Integer>> ans = new HashSet<>();
+        ans.add(new ArrayList<>());
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            List<Integer> sub = new ArrayList<>();
+            subsetsWithDup(arr, 0, i+1, sub, ans);
+        }
+        return ans.stream().toList();
+    }
+    private static void subsetsWithDup(int arr[],int offset, int size, List<Integer> sub,
+                                       Set<List<Integer>> ans)
+    {
+        if(offset == size)
+            return;
+
+        sub.add(arr[offset]);
+        subsetsWithDup(arr, offset+1, size, sub, ans);
+
+        ans.add(new ArrayList<>(sub));
+
+        sub.remove(sub.size()-1);
+        subsetsWithDup(arr, offset+1, size, sub, ans);
+    }
+
 
     public static void main(String[] args)
     {
-        System.out.println(countGoodNumbers(27l));
+
     }
 }

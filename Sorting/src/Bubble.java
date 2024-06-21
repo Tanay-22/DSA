@@ -19,7 +19,6 @@ public class Bubble
             }
             if (!swapped)
                 break;
-
         }
     }
     public static void main(String[] args)
