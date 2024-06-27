@@ -553,8 +553,7 @@ public class LL
         int arr[] = {1,3,2,-3,-2,5,5,-5,1};
         ListNode head = createLL(arr);
 
-        head = removeZeroSumSublists(head);
-        displayLL(head);
+
     }
 
     public static ListNode createLL(int arr[])

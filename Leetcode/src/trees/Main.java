@@ -1,6 +1,8 @@
 package trees;
 
 
+import com.sun.source.tree.Tree;
+
 import java.util.*;
 
 public class Main
@@ -581,14 +583,173 @@ public class Main
         return node.val + getSum(node.left) + getSum(node.right);
     }
 
+    //2476. Closest Nodes Queries in a Binary Search Tree
+    public static List<List<Integer>> closestNodes(TreeNode root, List<Integer> queries)
+    {
+        List<List<Integer>> ans = new ArrayList<>();
+
+        List<Integer> list = new ArrayList<>();
+        inorder(root, list);
+
+        for(Integer e: queries)
+        {
+            List<Integer> minMax = new ArrayList<>();
+            List<Integer> pair = binarySearch(list, e, 0, list.size()-1);
+
+            if(pair.get(0) >= 0)
+                minMax.add(list.get(pair.get(0)));
+            else
+                minMax.add(-1);
+
+            if(pair.get(1) < list.size())
+                minMax.add(list.get(pair.get(1)));
+            else
+                minMax.add(-1);
+
+            ans.add(minMax);
+        }
+        return ans;
+    }
+    private static void inorder(TreeNode node, List<Integer> list)
+    {
+        if(node == null)
+            return;
+
+        inorder(node.left, list);
+        list.add(node.val);
+        inorder(node.right, list);
+    }
+    private static List<Integer> binarySearch(List<Integer> list, int query, int start, int end)
+    {
+        if(start > end)
+            return new ArrayList<>(Arrays.asList(new Integer[]{end, start}));
+
+        int mid = start + (end - start) / 2;
+
+        if(list.get(mid) == query)
+            return new ArrayList<>(Arrays.asList(new Integer[]{mid, mid}));
+
+        if(list.get(mid) > query)
+            return binarySearch(list, query, start, mid-1);
+        else
+            return binarySearch(list, query, mid+1, end);
+    }
+
+    public static int mctFromLeafValues(int[] arr)
+    {
+        Arrays.sort(arr);
+        int sum = 0;
+        for (int i = 1; i < arr.length; i++)
+        {
+            int max1 = arr[i] * arr[i-1];
+            sum += max1;
+        }
+        return sum;
+    }
+
+    public static TreeNode bstFromPreorder(int[] preorder)
+    {
+        if(preorder == null)
+            return null;
+
+        return bstFromPreorder(preorder, 0, preorder.length-1);
+
+    }
+    private static TreeNode bstFromPreorder(int[] preorder, int start, int end)
+    {
+        if(start > end)
+            return null;
+
+        TreeNode node = new TreeNode(preorder[start]);
+        int i;
+        for (i = start; i <= end; i++)
+        {
+            if(preorder[i] > preorder[start])
+                break;
+        }
+        node.left = bstFromPreorder(preorder, start+1, i-1);
+        node.right = bstFromPreorder(preorder, i, end);
+
+        return node;
+    }
+
+    private class Width
+    {
+        int level;
+        int num;
+        TreeNode node;
+
+        public Width(int level, int num, TreeNode node)
+        {
+            this.level = level;
+            this.num = num;
+            this.node = node;
+        }
+    }
+    public int widthOfBinaryTree(TreeNode root)
+    {
+        List<List<Integer>> ans = new ArrayList<>();
+        if(root == null)
+            return 0;
+
+        Queue<Width> queue = new LinkedList<>();
+        queue.offer(new Width(0, 0, root));
+
+        while(!queue.isEmpty())
+        {
+            int levelSize = queue.size();
+            List<Integer> currentLevel = new ArrayList<>();
+            for (int i = 0; i < levelSize; i++)
+            {
+                Width current = queue.poll();
+                currentLevel.add(current.num);
+
+                if(current.node.left != null)
+                    queue.offer(new Width(current.level+1, current.num * 2 + 1, current.node.left));
+                if(current.node.right != null)
+                    queue.offer(new Width(current.level+1, current.num * 2 + 2, current.node.right));
+            }
+            ans.add(currentLevel);
+        }
+        int max = Integer.MIN_VALUE;
+        for (List<Integer> l: ans)
+            max = Math.max(max, l.get(l.size()-1) - l.get(0));
+//        System.out.println(ans);
+        return max+1;
+    }
+
+    //1038. Binary Search Tree to Greater Sum Tree
+    public static TreeNode bstToGst(TreeNode root)
+    {
+        List<TreeNode> list = new ArrayList<>();
+        bstToGstHelper(root, list);
+
+        for (int i = list.size()-2; i >= 0; i--)
+            list.get(i).val += list.get(i+1).val;
+
+        return root;
+    }
+
+    private static void bstToGstHelper(TreeNode node, List<TreeNode> list)
+    {
+        if(node == null)
+            return;
+
+        bstToGstHelper(node.left, list);
+        list.add(node);
+        bstToGstHelper(node.right, list);
+    }
+
+
+
     public static void main(String[] args)
     {
-        Integer arr[] = { -4,-2,-5 };
+        Integer arr[] ={4,1,6,0,2,5,7,null,null,null,3,null,null,null,8};
         TreeNode root = createTree(arr);
 
-
-
-        System.out.println(maxSumBST(root));
+        Main main = new Main() ;
+        bstToGst(root);
+        displayTree(root);
     }
 
     public static TreeNode createTree(Integer values[])
@@ -619,7 +780,6 @@ public class Main
             }
             i++;
         }
-
         return root;
     }
 

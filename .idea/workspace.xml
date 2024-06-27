@@ -5,49 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c42423ee-3d32-4a0d-bddf-365dfa076cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/LFUCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/QuickSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/BasicCalculator2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/CustomStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/FrontMiddleBackQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/MinStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/MyCircularQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/MyQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/trees/Codec.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/trees/ListNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/trees/LockingTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/trees/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/trees/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StacknQueue/StacknQueue.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StacknQueue/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StacknQueue/src/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TicTacToe/TicTacToe.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TicTacToe/src/TicTacToe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/Tree.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/AVLTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/BST.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/Search.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/SegmentTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tree/src/TreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/Twitter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/ATM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/FrequencyTracker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/LFUCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/MyHashMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/graph/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/heaps/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/LFUCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/StockSpanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/trees/BSTIterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/graph.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/src/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/src/WeightedGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heap/heap.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heap/src/Heap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heap/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/LL/LFUCache.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/math/MathQues.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/math/MathQues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/searching/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/searching/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/strings/StringQues.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/strings/StringQues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorting/src/Bubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sorting/src/Bubble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sorting/src/mergesort/MergeSortInPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sorting/src/mergesort/MergeSortInPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/trees/LockingTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/trees/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/trees/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LFUCache$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LFUCache.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/array/ArrayLC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/array/ArrayLC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/backtracking/Backtracking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/backtracking/Backtracking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/math/MathQues.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/math/MathQues.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/searching/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/searching/Search.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/strings/StringQues.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/strings/StringQues.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/stacknqueue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/stacknqueue/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/LockingTree$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/LockingTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/trees/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/trees/Node.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,11 +102,16 @@
     "Application.ArrayLC.executor": "Run",
     "Application.Backtracking.executor": "Run",
     "Application.BasicCalculator2.executor": "Run",
-    "Application.LL.executor": "Run",
+    "Application.Graph.executor": "Debug",
+    "Application.LL.executor": "Debug",
     "Application.Main.executor": "Run",
     "Application.QuickSort.executor": "Run",
     "Application.Search.executor": "Run",
     "Application.StringQues.executor": "Run",
+    "Application.graph.Main.executor": "Run",
+    "Application.heaps.Main.executor": "Debug",
+    "Application.stacknqueue.Main.executor": "Run",
+    "Application.trees.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -131,6 +135,26 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="design.Main" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="design.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -180,6 +204,19 @@
       <workItem from="1718819679987" duration="2029000" />
       <workItem from="1718863369424" duration="583000" />
       <workItem from="1718975146016" duration="355000" />
+      <workItem from="1718980384225" duration="6884000" />
+      <workItem from="1718987347384" duration="17193000" />
+      <workItem from="1719068853026" duration="11821000" />
+      <workItem from="1719122084339" duration="12652000" />
+      <workItem from="1719138997871" duration="2817000" />
+      <workItem from="1719201546550" duration="23000" />
+      <workItem from="1719201589656" duration="9000" />
+      <workItem from="1719220474393" duration="37421000" />
+      <workItem from="1719332105504" duration="4336000" />
+      <workItem from="1719337017055" duration="4361000" />
+      <workItem from="1719375128856" duration="114000" />
+      <workItem from="1719394702574" duration="618000" />
+      <workItem from="1719470255886" duration="21599000" />
     </task>
     <servers />
   </component>
@@ -682,7 +719,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/searching/Search.java</url>
-          <line>59</line>
+          <line>61</line>
           <properties class="searching.Search" method="reachNumber">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -691,7 +728,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>7</line>
+          <line>9</line>
           <properties class="trees.Main" method="isSymmetricHelper">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -700,7 +737,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>59</line>
+          <line>61</line>
           <properties class="trees.Main" method="hasPathSum">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -771,26 +808,8 @@
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Leetcode/src/trees/LockingTree.java</url>
-          <line>77</line>
-          <properties class="trees.LockingTree" method="unlock">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Leetcode/src/trees/LockingTree.java</url>
-          <line>65</line>
-          <properties class="trees.LockingTree" method="lock">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>102</line>
+          <line>104</line>
           <properties class="trees.Main" method="levelSum">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -799,7 +818,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>124</line>
+          <line>126</line>
           <properties class="trees.Main" method="pathSum">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -808,7 +827,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>113</line>
+          <line>115</line>
           <properties class="trees.Main" method="pathSum">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -826,7 +845,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>481</line>
+          <line>483</line>
           <properties class="trees.Main" method="binaryTreePaths">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -835,7 +854,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>515</line>
+          <line>517</line>
           <properties class="trees.Main" method="longestUnivaluePath">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -844,12 +863,201 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>535</line>
+          <line>537</line>
           <properties class="trees.Main" method="isSubPath">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
+          <line>586</line>
+          <properties class="trees.Main" method="closestNodes">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/searching/Search.java</url>
+          <line>82</line>
+          <properties class="searching.Search" method="countSmaller">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/ATM.java</url>
+          <line>12</line>
+          <properties class="design.ATM" method="deposit">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/ATM.java</url>
+          <line>20</line>
+          <properties class="design.ATM" method="withdraw">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/MyHashMap.java</url>
+          <line>29</line>
+          <properties class="design.MyHashMap" method="get">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="184" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/MyHashMap.java</url>
+          <line>38</line>
+          <properties class="design.MyHashMap" method="remove">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="185" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/MyHashMap.java</url>
+          <line>16</line>
+          <properties class="design.MyHashMap" method="put">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/FrequencyTracker.java</url>
+          <line>14</line>
+          <properties class="design.FrequencyTracker" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/FrequencyTracker.java</url>
+          <line>26</line>
+          <properties class="design.FrequencyTracker" method="deleteOne">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="188" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/FrequencyTracker.java</url>
+          <line>40</line>
+          <properties class="design.FrequencyTracker" method="hasFrequency">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="189" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
+          <line>649</line>
+          <properties class="trees.Main" method="bstFromPreorder">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="191" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
+          <line>657</line>
+          <properties class="trees.Main" method="bstFromPreorder">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/stacknqueue/StockSpanner.java</url>
+          <line>26</line>
+          <properties class="stacknqueue.StockSpanner" method="next">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java</url>
+          <line>374</line>
+          <properties class="stacknqueue.Main" method="dailyTemperatures">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
+          <line>688</line>
+          <properties class="trees.Main" method="widthOfBinaryTree">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="198" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java</url>
+          <line>419</line>
+          <properties class="stacknqueue.Main" method="evalRPN">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="199" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/stacknqueue/LFUCache.java</url>
+          <line>42</line>
+          <properties class="stacknqueue.LRUCache" method="getNode">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="200" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/stacknqueue/LFUCache.java</url>
+          <line>75</line>
+          <properties class="stacknqueue.LRUCache" method="put">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/LFUCache.java</url>
+          <line>46</line>
+          <properties class="design.LFUCache" method="getNode">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/design/LFUCache.java</url>
+          <line>60</line>
+          <properties class="design.LFUCache" method="put">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/graph/Main.java</url>
+          <line>25</line>
+          <properties class="graph.Main" method="dfs">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
@@ -858,86 +1066,91 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>473</line>
+          <line>475</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>447</line>
+          <line>449</line>
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>414</line>
+          <line>416</line>
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>390</line>
+          <line>392</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>365</line>
+          <line>367</line>
           <option name="timeStamp" value="144" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>347</line>
+          <line>349</line>
           <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>325</line>
+          <line>327</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>286</line>
+          <line>288</line>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>25</line>
+          <line>27</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>50</line>
+          <line>52</line>
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>66</line>
+          <line>68</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>141</line>
+          <line>143</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>171</line>
+          <line>173</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>201</line>
+          <line>203</line>
           <option name="timeStamp" value="154" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>235</line>
+          <line>237</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
-          <line>258</line>
+          <line>260</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="lRUCache.head" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DSA$MathQues.ic" NAME="MathQues Coverage Results" MODIFIED="1717346552243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

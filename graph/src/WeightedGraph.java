@@ -1,0 +1,56 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class WeightedGraph
+{
+
+    private class Vertex
+    {
+        int value;
+        int weight;
+
+        public Vertex(int value, int weight)
+        {
+            this.value = value;
+            this.weight = weight;
+        }
+    }
+
+    private HashMap<Integer, List<Vertex>> hashMap;
+
+    public WeightedGraph()
+    {
+        this.hashMap = new HashMap<>();
+    }
+
+    public void populate(int edges, BufferedReader br) throws IOException
+    {
+        for (int i = 0; i < edges; i++)
+        {
+            String inputs = br.readLine();
+            int x = Integer.parseInt(inputs.substring(0, inputs.indexOf(' ')));
+            int y = Integer.parseInt(inputs.substring(inputs.indexOf(' ')+1, inputs.lastIndexOf(" ")));
+            int weight = Integer.parseInt(inputs.substring(inputs.lastIndexOf(' ')+1));
+
+            // for x
+            List<Vertex> neighbours = this.hashMap.get(x);
+            if(neighbours == null)
+                neighbours = new ArrayList<>();
+            neighbours.add(new Vertex(y, weight));
+            hashMap.put(x, neighbours);
+
+
+            // for y
+            neighbours = this.hashMap.get(y);
+
+            if(neighbours == null)
+                neighbours = new ArrayList<>();
+            neighbours.add(new Vertex(x, weight));
+            hashMap.put(y, neighbours);
+        }
+    }
+}

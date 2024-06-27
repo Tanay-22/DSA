@@ -80,7 +80,7 @@ public class Search
 
     public static void depthForSearch(TreeNode root)
     {
-
+        // inorder, preorder, postoreder traversal
     }
 
 

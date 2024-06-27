@@ -1,5 +1,7 @@
 package array;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ArrayLC
@@ -34,9 +36,68 @@ public class ArrayLC
     }
 
 
+    public static int numberOfSubarrays(int[] arr, int k)
+    {
+        int n = arr.length;
+        int count = 0;
+        for (int i = 0; i < n; i++)
+        {
+            count += arr[i] & 1;
+            arr[i] = count;
+        }
+        count = 0;
+
+        for (int i = k; i <= n; i++)
+        {
+            for (int j = 0; j <= n - i; j++)
+            {
+                int prevCount = j > 0 ? arr[j-1] : 0;
+                int lastCount = arr[j + i - 1];
+
+                if(lastCount - prevCount == k)
+                    count++;
+            }
+        }
+        return count;
+    }
+
+    //215. Kth Largest Element in an Array
+    public static int findKthLargest(int[] arr, int k)
+    {
+        List<Integer> maxHeap = new ArrayList<>();
+
+        for(int e: arr)
+            insertInHeap(e, maxHeap);
+
+        System.out.println(maxHeap);
+        return 0;
+    }
+
+    private static void upheap(List<Integer> list, int i)
+    {
+        if(i == 0)
+            return;
+        int parent = (i - 1) /2;
+
+        if(list.get(i) >= list.get(parent))
+        {
+            int temp = list.get(i);
+            list.set(i, list.get(parent));
+            list.set(parent, temp);
+
+            upheap(list, parent);
+        }
+    }
+    private static void insertInHeap(int x, List<Integer> list)
+    {
+        list.add(x);
+        upheap(list, list.size()-1);
+    }
+
 
     public static void main(String[] args)
     {
-
+        int arr[] = {3,2,3,1,2,4,5,5,6};
+        System.out.println(findKthLargest(arr, 2));
     }
 }

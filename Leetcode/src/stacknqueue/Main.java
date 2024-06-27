@@ -371,6 +371,23 @@ public class Main
         return ans;
     }
 
+    //739. Daily Temperatures
+    public static int[] dailyTemperatures(int[] temperatures)
+    {
+        Stack<Integer> stack = new Stack<>();
+        int arr[] = new int[temperatures.length];
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()])
+            {
+                arr[stack.peek()] = i - stack.pop();
+            }
+            stack.push(i);
+        }
+        return arr;
+    }
+
     private static List<String> tokenizeExpression(String expression)
     {
         List<String> tokens = new ArrayList<>();
@@ -400,10 +417,72 @@ public class Main
         return tokens;
     }
 
+    public static int evalRPN(String[] tokens)
+    {
+        Stack<String> stack = new Stack<>();
+        for (int i = 0; i < tokens.length; i++)
+        {
+            if(tokens[i].equals("+") || tokens[i].equals("-") || tokens[i].equals("/") || tokens[i].equals("*"))
+            {
+                int y = Integer.parseInt(stack.pop());
+                int x = Integer.parseInt(stack.pop());
+
+                int res = 0;
+                switch (tokens[i])
+                {
+                    case "+":
+                        res = x + y;
+                        break;
+
+                    case "-":
+                        res = x - y;
+                        break;
+
+                    case "*":
+                        res = x * y;
+                        break;
+
+                    case "/":
+                        res = x / y;
+                        break;
+                }
+                stack.push(String.valueOf(res));
+            }
+            else
+                stack.push(tokens[i]);
+        }
+        return Integer.parseInt(stack.pop());
+    }
+
+    public static int sumSubarrayMins(int[] arr)
+    {
+        Stack<Integer> stack = new Stack<>();
+        long sum = 0l;
+        for (int i = 0; i < arr.length; i++)
+        {
+            int min = Integer.MAX_VALUE;
+            for (int j = i; j < arr.length; j++)
+            {
+                stack.push(arr[j]);
+                min = Math.min(stack.peek(), min);
+                sum += min;
+            }
+            stack.clear();
+        }
+        return (int)(sum % (long)(1e9 + 7));
+    }
+
     public static void main(String[] args)
     {
-        String s = "1-(     -2)";
-
-        System.out.println(calculate(s));
+        LRUCache lRUCache = new LRUCache(2);
+        lRUCache.put(1, 1); // cache is {1=1}
+        lRUCache.put(2, 2); // cache is {1=1, 2=2}
+        System.out.println(lRUCache.get(1));    // return 1
+        lRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
+        System.out.println(lRUCache.get(2));    // returns -1 (not found)
+        lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
+        System.out.println(lRUCache.get(1));    // return -1 (not found)
+        System.out.println(lRUCache.get(3));    // return 3
+        System.out.println(lRUCache.get(4));    // return 4
     }
 }
