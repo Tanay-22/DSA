@@ -5,48 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c42423ee-3d32-4a0d-bddf-365dfa076cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/Twitter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/ATM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/FrequencyTracker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/LFUCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/MyHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/graph/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/heaps/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/LFUCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/StockSpanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/trees/BSTIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph/graph.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph/src/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph/src/WeightedGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heap/heap.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heap/src/Heap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heap/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.autocp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graph/src/DirectedGraph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/LL/LFUCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/searching/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/searching/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/trees/LockingTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/trees/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/trees/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tree/src/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LFUCache$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LFUCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/graph/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/graph/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/src/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/array/ArrayLC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/array/ArrayLC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/backtracking/Backtracking.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/backtracking/Backtracking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/searching/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/searching/Search.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/stacknqueue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/stacknqueue/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/LockingTree$Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/LockingTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/trees/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/trees/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/graph/Main$RCPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/graph/Main$RCPair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/graph/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/graph/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/graph/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/graph/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +89,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/DSA",
+    "last_opened_file_path": "C:/Projects/Trading Platform/trading-react",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -217,6 +188,20 @@
       <workItem from="1719375128856" duration="114000" />
       <workItem from="1719394702574" duration="618000" />
       <workItem from="1719470255886" duration="21599000" />
+      <workItem from="1719553279691" duration="7419000" />
+      <workItem from="1719565615028" duration="6160000" />
+      <workItem from="1719572457823" duration="490000" />
+      <workItem from="1719588626112" duration="5829000" />
+      <workItem from="1719640680585" duration="20539000" />
+      <workItem from="1719745082107" duration="76000" />
+      <workItem from="1719774433076" duration="1631000" />
+      <workItem from="1719776818551" duration="245000" />
+      <workItem from="1719813305126" duration="7486000" />
+      <workItem from="1719823850612" duration="14231000" />
+      <workItem from="1719860357738" duration="10550000" />
+      <workItem from="1719911553159" duration="8000" />
+      <workItem from="1719912050457" duration="623000" />
+      <workItem from="1719986439271" duration="8198000" />
     </task>
     <servers />
   </component>
@@ -242,7 +227,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java</url>
-          <line>436</line>
+          <line>443</line>
           <properties class="backtracking.Backtracking" method="findKthBitHelper">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -746,7 +731,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java</url>
-          <line>514</line>
+          <line>524</line>
           <properties class="backtracking.Backtracking" method="subsetsWithDup">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -755,7 +740,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java</url>
-          <line>501</line>
+          <line>510</line>
           <properties class="backtracking.Backtracking" method="subsetsWithDup">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -1052,12 +1037,66 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/graph/Main.java</url>
-          <line>25</line>
+          <line>73</line>
           <properties class="graph.Main" method="dfs">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/graph/Main.java</url>
+          <line>475</line>
+          <properties class="graph.Main" method="countDistinctIslands">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/graph/Main.java</url>
+          <line>693</line>
+          <properties class="graph.Main" method="canFinish">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java</url>
+          <line>540</line>
+          <properties class="backtracking.Backtracking" method="permuteUnique">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java</url>
+          <line>552</line>
+          <properties class="backtracking.Backtracking" method="permuatation">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/backtracking/Backtracking.java</url>
+          <line>581</line>
+          <properties class="backtracking.Backtracking" method="countArrangementHelper">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="220" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/graph/Main.java</url>
+          <line>768</line>
+          <properties class="graph.Main" method="findOrder">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
@@ -1149,6 +1188,7 @@
     <watches-manager>
       <configuration name="Application">
         <watch expression="lRUCache.head" />
+        <watch expression="dictionary.entrySet().toArray()[0]" />
       </configuration>
     </watches-manager>
   </component>

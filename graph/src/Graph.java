@@ -53,12 +53,14 @@ public class Graph
             int currentNode = queue.poll();
             bfs.add(currentNode);
 
-            for(Integer neighbour: hashMap.get(currentNode))
+            List<Integer> neigbours = hashMap.get(currentNode);
+
+            for(Integer neighbour: neigbours)
             {
                 if(!visited[neighbour])
                 {
                     visited[neighbour] = true;
-                    queue.add(neighbour);
+                    queue.offer(neighbour);
                 }
             }
         }
@@ -83,5 +85,163 @@ public class Graph
             if(!visited[e])
                 dfs(e, visited, dfs);
         }
+    }
+
+    private class Pair
+    {
+        int value;
+        int parent;
+
+        public Pair(int value, int parent)
+        {
+            this.value = value;
+            this.parent = parent;
+        }
+    }
+
+    public boolean isCycleUsingBSF()
+    {
+        int v = this.hashMap.size();
+        boolean visited[] = new boolean[v];
+
+        for (int i = 0; i < v; i++)
+        {
+            if(!visited[i])
+            {
+                if(this.checkForCycleBFS(i, visited))
+                    return true;
+            }
+        }
+        return false;
+    }
+    private boolean checkForCycleBFS(int startNode, boolean visited[])
+    {
+        //BFS
+        Queue<Pair> queue = new LinkedList<>();
+
+        visited[startNode] = true;
+        queue.offer(new Pair(startNode, -1));
+        while (!queue.isEmpty())
+        {
+            Pair currentNode = queue.poll();
+            List<Integer> neighbours = hashMap.get(currentNode.value);
+            for(Integer neighbour: neighbours)
+            {
+                if(!visited[neighbour])
+                {
+                    visited[neighbour] = true;
+                    queue.offer(new Pair(neighbour, currentNode.value));
+                }
+                else if (currentNode.parent != neighbour)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isCycleUsingDSF()
+    {
+        int v = this.hashMap.size();
+        boolean visited[] = new boolean[v];
+
+        for (int i = 0; i < v; i++)
+        {
+            if(!visited[i])
+            {
+                if(this.checkForCycleDFS(i, visited))
+                    return true;
+            }
+        }
+        return false;
+    }
+    private boolean checkForCycleDFS(int startNode, boolean visited[])
+    {
+        visited[startNode] = true;
+
+        for(Integer e: this.hashMap.get(startNode))
+        {
+            if(!visited[e])
+            {
+                if(this.checkForCycleDFS(e, visited))
+                    return true;
+            }
+            else if (e != startNode)
+                return true;
+        }
+        return false;
+    }
+
+    //A bipartite graph can be colored with two colors, such that no adjacent vertices have the same color.
+    public boolean isBipartiteBFS(int startNode)
+    {
+        int color[] = new int[hashMap.size()];
+
+        for (int i = 0; i < hashMap.size(); i++)
+        {
+            if(color[i] == 0)
+            {
+                if(!this.isBipartiteBFSHelper(i, color, 1))
+                    return false;
+            }
+        }
+        return true;
+    }
+    private boolean isBipartiteBFSHelper(int startNode, int color[], int colorValue)
+    {
+        // 1 for let say RED color
+        // -1 for let say BLUE color
+        int v = this.hashMap.size();
+        Queue<Integer> queue = new LinkedList<>();
+        color[startNode] = colorValue;
+        queue.offer(startNode);
+
+        while (!queue.isEmpty())
+        {
+            int currentNode = queue.poll();
+            List<Integer> neigbours = hashMap.get(currentNode);
+
+            for(Integer neighbour: neigbours)
+            {
+                if(color[neighbour] == 0)
+                {
+                    color[neighbour] = -color[currentNode];
+                    queue.offer(neighbour);
+                }
+                else if (color[neighbour] == color[currentNode])
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isBipartiteDFS(int startNode)
+    {
+        int color[] = new int[hashMap.size()];
+
+        for (int i = 0; i < hashMap.size(); i++)
+        {
+            if(color[i] == 0)
+            {
+                if(!this.isBipartiteDFSHelper(color, i, 1))
+                    return false;
+            }
+        }
+        return true;
+    }
+    private boolean isBipartiteDFSHelper(int color[], int node, int colorValue)
+    {
+        color[node] = colorValue;
+
+        for(Integer e: this.hashMap.get(node))
+        {
+            if(color[e] == 0)
+            {
+                if(!isBipartiteDFSHelper(color, e, -color[node]))
+                    return false;
+                else if (color[e] == color[node])
+                    return false;
+            }
+        }
+        return true;
     }
 }

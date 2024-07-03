@@ -13,5 +13,7 @@ public class Main
 
         System.out.println(graph.BFSTraversal(0));
         System.out.println(graph.DFSTraversal(0));
+        System.out.println("Cycle - " + graph.isCycleUsingBSF());
+        System.out.println("Cycle - " + graph.isCycleUsingDSF());
     }
 }
