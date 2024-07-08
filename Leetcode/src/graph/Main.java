@@ -659,30 +659,30 @@ public class Main
 
         for (int i = 0; i < V; i++)
         {
-            if(!visited[i])
+            if (!visited[i])
                 this.checkSafeNodes(i, adj, visited, pathVisited, check);
         }
         for (int i = 0; i < V; i++)
         {
-            if(check[i])
+            if (check[i])
                 result.add(i);
         }
         return result;
     }
+
     private boolean checkSafeNodes(int node, List<List<Integer>> adj, boolean visited[], boolean pathVisited[],
                                    boolean check[])
     {
         visited[node] = true;
         pathVisited[node] = true;
         check[node] = false;
-        for (Integer e: adj.get(node))
+        for (Integer e : adj.get(node))
         {
-            if(!visited[e])
+            if (!visited[e])
             {
-                if(checkSafeNodes(e, adj, visited, pathVisited, check))
+                if (checkSafeNodes(e, adj, visited, pathVisited, check))
                     return true;
-            }
-            else if(pathVisited[e])
+            } else if (pathVisited[e])
                 return true;
         }
         check[node] = true;
@@ -704,25 +704,26 @@ public class Main
         for (int e[] : prerequisites)
             list.get(e[0]).add(e[1]);
 
-        if(this.isCycle(list))
+        if (this.isCycle(list))
             return false;
 
 
         for (int i = 0; i < numCourses; i++)
         {
-            if(!visited[i])
+            if (!visited[i])
                 this.canFinishHelper(list, i, stack, visited);
         }
 
         return stack.size() == numCourses;
     }
+
     private void canFinishHelper(List<List<Integer>> list, int node, Stack<Integer> stack, boolean visited[])
     {
         visited[node] = true;
 
-        for(Integer e: list.get(node))
+        for (Integer e : list.get(node))
         {
-            if(!visited[e])
+            if (!visited[e])
                 canFinishHelper(list, e, stack, visited);
         }
         stack.push(node);
@@ -736,27 +737,27 @@ public class Main
 
         for (int i = 0; i < v; i++)
         {
-            if(!visited[i])
+            if (!visited[i])
             {
-                if(this.dfsCheckCycle(list, i, visited, pathVisited))
+                if (this.dfsCheckCycle(list, i, visited, pathVisited))
                     return true;
             }
         }
         return false;
     }
+
     private boolean dfsCheckCycle(List<List<Integer>> list, int node, boolean visited[], boolean pathVisited[])
     {
         visited[node] = true;
         pathVisited[node] = true;
 
-        for(Integer e: list.get(node))
+        for (Integer e : list.get(node))
         {
-            if(!visited[e])
+            if (!visited[e])
             {
-                if(this.dfsCheckCycle(list, e, visited, pathVisited))
+                if (this.dfsCheckCycle(list, e, visited, pathVisited))
                     return true;
-            }
-            else if (pathVisited[e])
+            } else if (pathVisited[e])
                 return true;
         }
         pathVisited[node] = false;
@@ -766,54 +767,55 @@ public class Main
 
     //https://www.geeksforgeeks.org/problems/alien-dictionary/1
     //  Alien Dictionary
-    public String findOrder(String [] dict, int N, int K)
+    public String findOrder(String[] dict, int N, int K)
     {
         HashMap<Character, List<Character>> dictionary = new HashMap<>();
         this.populateDictionary(dictionary, dict);
 
         //bfs
         int indegree[] = new int[K];
-        for (char key: dictionary.keySet())
+        for (char key : dictionary.keySet())
         {
-            for (Character it: dictionary.get(key))
-                indegree[it-'a']++;
+            for (Character it : dictionary.get(key))
+                indegree[it - 'a']++;
         }
 
         Queue<Integer> queue = new LinkedList<>();
         int count = 0;
         for (int i = 0; i < K; i++)
         {
-            if(indegree[i] == 0)
+            if (indegree[i] == 0)
                 queue.offer(i);
         }
         StringBuilder sb = new StringBuilder();
         while (!queue.isEmpty())
         {
             int node = queue.poll();
-            sb.append((char)(node+ 'a'));
+            sb.append((char) (node + 'a'));
             count++;
-            List<Character> neigbours = dictionary.get((char)(node+'a'));
-            if(neigbours != null)
+            List<Character> neigbours = dictionary.get((char) (node + 'a'));
+            if (neigbours != null)
             {
-                for (Character it: neigbours)
+                for (Character it : neigbours)
                 {
-                    indegree[it-'a']--;
-                    if(indegree[it-'a'] == 0)
-                        queue.offer(it-'a');
+                    indegree[it - 'a']--;
+                    if (indegree[it - 'a'] == 0)
+                        queue.offer(it - 'a');
                 }
             }
         }
-        if(count == K)
+        if (count == K)
             return sb.toString();
         else
             return "";
     }
+
     private void populateDictionary(HashMap<Character, List<Character>> dictionary, String dict[])
     {
-        for (int i = 0; i < dict.length-1; i++)
+        for (int i = 0; i < dict.length - 1; i++)
         {
             String first = dict[i];
-            String second = dict[i+1];
+            String second = dict[i + 1];
             int j = 0;
 
             while (j < first.length() && j < second.length() && first.charAt(j) == second.charAt(j))
@@ -829,23 +831,470 @@ public class Main
         }
     }
 
+    //https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/1
+    //Shortest path in Directed Acyclic Graph
+    private class Pair
+    {
+        int vertex;
+        int weight;
 
-    
+        public Pair(int vertex, int weight)
+        {
+            this.vertex = vertex;
+            this.weight = weight;
+        }
+    }
+
+    public int[] shortestPath(int N, int M, int[][] edges)
+    {
+        List<List<Pair>> list = new ArrayList<>();
+
+        for (int i = 0; i < N; i++)
+            list.add(new ArrayList<>());
+
+        for (int i = 0; i < M; i++)
+        {
+            Pair pair = new Pair(edges[i][1], edges[i][2]); // { node, weight }
+            list.get(edges[i][0]).add(pair);
+        }
+        Stack<Integer> stack = new Stack<>();
+        boolean visited[] = new boolean[N];
+        for (int i = 0; i < N; i++)
+        {
+            if (!visited[i])
+                this.topoDFS(i, visited, stack, list);
+        }
+        int[] distance = new int[N];
+        Arrays.fill(distance, (int) 1e9);
+        distance[0] = 0;
+        while (!stack.isEmpty())
+        {
+            int current = stack.pop();
+            for (Pair n : list.get(current))
+            {
+                if (distance[current] + n.weight < distance[n.vertex])
+                    distance[n.vertex] = distance[current] + n.weight;
+            }
+        }
+        for (int i = 0; i < N; i++)
+        {
+            if (distance[i] == 1e9)
+                distance[i] = -1;
+        }
+        return distance;
+    }
+
+    private void topoDFS(int node, boolean visited[], Stack<Integer> stack, List<List<Pair>> list)
+    {
+        visited[node] = true;
+        for (Pair neighbour : list.get(node))
+        {
+            if (!visited[neighbour.vertex])
+                topoDFS(neighbour.vertex, visited, stack, list);
+        }
+        stack.push(node);
+    }
+
+
+    //  https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1
+    //  Shortest path in Undirected Graph
+    public int[] shortestPath(int[][] edges, int n, int m, int src)
+    {
+        List<List<Pair>> list = new ArrayList<>();
+
+        for (int i = 0; i < n; i++)
+            list.add(new ArrayList<>());
+
+        for (int i = 0; i < m; i++)
+        {
+            Pair pair = new Pair(edges[i][1], edges[i][2]); // { node, weight }
+            list.get(edges[i][0]).add(pair);
+        }
+        Stack<Integer> stack = new Stack<>();
+        boolean visited[] = new boolean[n];
+        for (int i = 0; i < n; i++)
+        {
+            if (!visited[i])
+                this.topoDFS(i, visited, stack, list);
+        }
+        int[] distance = new int[n];
+        Arrays.fill(distance, (int) 1e9);
+        distance[0] = 0;
+        while (!stack.isEmpty())
+        {
+            int current = stack.pop();
+            for (Pair pair : list.get(current))
+            {
+                if (distance[current] + pair.weight < distance[pair.vertex])
+                    distance[pair.vertex] = distance[current] + pair.weight;
+            }
+        }
+        for (int i = 0; i < n; i++)
+        {
+            if (distance[i] == 1e9)
+                distance[i] = -1;
+        }
+        return distance;
+    }
+
+    //  127. Word Ladder
+    private class Word
+    {
+        String word;
+        int level;
+
+        public Word(String word, int level)
+        {
+            this.word = word;
+            this.level = level;
+        }
+    }
+
+    public int ladderLength(String beginWord, String endWord, List<String> wordList)
+    {
+        Set<String> set = new HashSet<>();
+        int wordLength = wordList.get(0).length();
+        set.addAll(wordList);
+        Queue<Word> queue = new LinkedList<>();
+        queue.add(new Word(beginWord, 1));
+        set.removeIf(word -> word.equals(beginWord));
+
+        while (!queue.isEmpty())
+        {
+            Word word = queue.poll();
+            if (word.word.equals(endWord))
+                return word.level;
+
+            for (int i = 0; i < wordLength; i++)
+            {
+                for (char j = 'a'; j <= 'z'; j++)
+                {
+                    char newWordArray[] = word.word.toCharArray();
+                    newWordArray[i] = j;
+                    String newWord = String.valueOf(newWordArray);
+
+                    if (set.contains(newWord))
+                    {
+                        set.remove(newWord);
+                        queue.offer(new Word(newWord, word.level + 1));
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+
+    // 126. Word Ladder II
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList)
+    {
+        List<List<String>> ans = new ArrayList<>();
+
+        if (!wordList.contains(endWord))
+            return ans;
+
+        int level = 0;
+        Set<String> set = new HashSet<>();
+        int wordLength = wordList.get(0).length();
+        set.addAll(wordList);
+
+        List<String> list = new ArrayList<>();
+        List<String> levelList = new ArrayList<>();
+        list.add(beginWord);
+
+        Queue<List<String>> queue = new LinkedList<>();
+        queue.add(list);
+
+        while (!queue.isEmpty())
+        {
+            List<String> current = queue.poll();
+            if (current.size() > level)
+            {
+                level++;
+                for (String s : levelList)
+                    set.remove(s);
+            }
+            String word = current.get(current.size() - 1);
+            if (word.equals(endWord))
+            {
+                if (ans.isEmpty() || ans.get(0).size() == current.size())
+                    ans.add(current);
+            }
+            for (int i = 0; i < wordLength; i++)
+            {
+                for (char j = 'a'; j <= 'z'; j++)
+                {
+                    char newWordArray[] = word.toCharArray();
+                    newWordArray[i] = j;
+                    String newWord = String.valueOf(newWordArray);
+
+                    if (set.contains(newWord))
+                    {
+                        current.add(newWord);
+                        queue.add(new ArrayList<>(current));
+                        levelList.add(newWord);
+                        current.remove(current.size() - 1);
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+
+    //1091. Shortest Path in Binary Matrix
+    public int shortestPathBinaryMatrix(int[][] grid)
+    {
+        int n = grid.length;
+        if (grid[0][0] != 0 || grid[n - 1][n - 1] != 0)
+            return -1;
+
+        int directions[][] = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+                grid[i][j] = (grid[i][j] == 1) ? -1 : (int) 1e9;
+        }
+        Queue<RCPair> queue = new LinkedList<>();
+        queue.offer(new RCPair(0, 0));
+        grid[0][0] = 0;
+        while (!queue.isEmpty())
+        {
+            RCPair current = queue.poll();
+
+            for (int direction[] : directions)
+            {
+                int nrow = current.row + direction[0];
+                int ncol = current.col + direction[1];
+
+                if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < n && grid[nrow][ncol] != -1)
+                {
+                    if (grid[nrow][ncol] > grid[current.row][current.col] + 1)
+                    {
+                        grid[nrow][ncol] = grid[current.row][current.col] + 1;
+                        queue.offer(new RCPair(nrow, ncol));
+                    }
+                }
+            }
+        }
+        return grid[n - 1][n - 1] == 1e9 ? -1 : grid[n - 1][n - 1] + 1;
+    }
+
+    //1631. Path With Minimum Effort
+    private class Trio
+    {
+        int row;
+        int col;
+        int effort;
+
+        public Trio(int row, int col, int effort)
+        {
+            this.row = row;
+            this.col = col;
+            this.effort = effort;
+        }
+    }
+
+    public int minimumEffortPath(int[][] heights)
+    {
+        int m = heights.length, n = heights[0].length;
+        int directions[][] = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
+
+        int efforts[][] = new int[m][n];
+        for (int[] e : efforts)
+            Arrays.fill(e, (int) 1e9);
+
+        PriorityQueue<Trio> priorityQueue = new PriorityQueue<>((x, y) -> x.effort - y.effort);
+        priorityQueue.offer(new Trio(0, 0, 0));
+        efforts[0][0] = 0;
+
+        while (!priorityQueue.isEmpty())
+        {
+            Trio current = priorityQueue.poll();
+            if (current.row == m - 1 && current.col == n - 1)
+                return current.effort;
+
+            for (int direction[] : directions)
+            {
+                int nrow = current.row + direction[0];
+                int ncol = current.col + direction[1];
+
+                if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < n)
+                {
+                    int newEffort = Math.max(
+                            Math.abs(heights[nrow][ncol] - heights[current.row][current.col]), current.effort);
+
+                    if (newEffort < efforts[nrow][ncol])
+                    {
+                        efforts[nrow][ncol] = newEffort;
+                        priorityQueue.offer(new Trio(nrow, ncol, newEffort));
+                    }
+                }
+            }
+        }
+        return 0;
+    }
+
+    //787. Cheapest Flights Within K Stops
+    private class Flight
+    {
+        int destination;
+        int price;
+
+        public Flight(int destination, int price)
+        {
+            this.destination = destination;
+            this.price = price;
+        }
+    }
+
+    private class Tuple
+    {
+        int stops;
+        int city;
+        int cost;
+
+        public Tuple(int stops, int city, int cost)
+        {
+            this.stops = stops;
+            this.city = city;
+            this.cost = cost;
+        }
+    }
+
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k)
+    {
+        List<List<Flight>> list = new ArrayList<>();
+        for (int i = 0; i < n; i++)
+            list.add(new ArrayList<>());
+        for (int i = 0; i < flights.length; i++)
+            list.get(flights[i][0]).add(new Flight(flights[i][1], flights[i][2]));
+
+        Queue<Tuple> queue = new LinkedList<>();
+        queue.offer(new Tuple(0, src, 0));
+        int costs[] = new int[n];
+        Arrays.fill(costs, (int) 1e9);
+        costs[src] = 0;
+
+        while (!queue.isEmpty())
+        {
+            Tuple current = queue.poll();
+
+            if (current.stops > k)
+                continue;
+            for (Flight flight : list.get(current.city))
+            {
+                if (current.cost + flight.price < costs[flight.destination] && current.stops <= k)
+                {
+                    costs[flight.destination] = current.cost + flight.price;
+                    queue.offer(new Tuple(current.stops + 1, flight.destination,
+                            current.cost + flight.price));
+                }
+            }
+        }
+        return costs[dst] == 1e9 ? -1 : costs[dst];
+    }
+
+    //  https://www.geeksforgeeks.org/problems/minimum-multiplications-to-reach-end/1
+    //  Minimum Multiplications to reach End
+    int minimumMultiplications(int[] arr, int start, int end)
+    {
+        int mod = (int) 1e5;
+        int multiplications[] = new int[mod];
+        Arrays.fill(multiplications, (int) 1e9);
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+
+        priorityQueue.offer(start);
+        multiplications[0] = 1;
+
+        while (!priorityQueue.isEmpty())
+        {
+            Integer current = priorityQueue.poll();
+            for (int muliplier : arr)
+            {
+                int newNum = (current * muliplier) % mod;
+                if (multiplications[newNum] > multiplications[current] + 1)
+                {
+                    multiplications[newNum] = multiplications[current] + 1;
+                    if (newNum == end)
+                        return multiplications[newNum];
+
+                    priorityQueue.offer(newNum);
+                }
+            }
+        }
+        return -1;
+    }
+
+    //  1976. Number of Ways to Arrive at Destination
+    private class Road
+    {
+        long time;
+        int destination;
+
+        public Road(int destination, long time)
+        {
+            this.destination = destination;
+            this.time = time;
+        }
+    }
+    public int countPaths(int n, int[][] roads)
+    {
+        int mod = (int)(1e9) + 7;
+        List<List<Road>> list = new ArrayList<>();
+        long totalTime[] = new long[n];
+        Arrays.fill(totalTime, Long.MAX_VALUE);
+        int ways[] = new int[n];
+
+        for (int i = 0; i < n; i++)
+            list.add(new ArrayList<>());
+        for (int i = 0; i < roads.length; i++)
+        {
+            list.get(roads[i][0]).add(new Road(roads[i][1], roads[i][2]));
+            list.get(roads[i][1]).add(new Road(roads[i][0], roads[i][2]));
+        }
+
+        PriorityQueue<Road> priorityQueue = new PriorityQueue<>((x, y) -> Long.compare(x.time, y.time));
+        priorityQueue.offer(new Road(0, 0));
+        totalTime[0] = 0l;
+        ways[0] = 1;
+
+        while (!priorityQueue.isEmpty())
+        {
+            Road current = priorityQueue.poll();
+
+            for (Road road: list.get(current.destination))
+            {
+                if(current.time + road.time < totalTime[road.destination])
+                {
+                    totalTime[road.destination] = current.time + road.time;
+                    priorityQueue.offer(new Road(road.destination, totalTime[road.destination]));
+                    ways[road.destination] = ways[current.destination];
+                }
+                else if (current.time + road.time == totalTime[road.destination])
+                    ways[road.destination] = (ways[current.destination] + ways[road.destination]) % mod;
+            }
+        }
+        return ways[n-1] % mod;
+    }
 
     public static void main(String[] args)
     {
-        /*int arr[][] = {
-                {1, 0},
-                {2, 1},
-                {3, 1},
-                {3, 7},
-                {4, 3},
-                {5, 3},
-                {6, 3}
+        String words[] = {"hot", "dot", "dog", "lot", "log", "cog"};
+        int[][] array =
+        {
+            {0, 6, 7},
+            {0, 1, 2},
+            {1, 2, 3},
+            {1, 3, 3},
+            {6, 3, 3},
+            {3, 5, 1},
+            {6, 5, 1},
+            {2, 5, 1},
+            {0, 4, 5},
+            {4, 6, 2}
         };
-        int a[] = {3,2,5,4,6,1,7,0};*/
-        String[] dict = {"caa","aaa","aab"};
+        int arr[] = {20, 14, 1, 4, 20};
+
         Main main = new Main();
-        System.out.println(main.findOrder(dict, 5, 4));
+        System.out.println(main.countPaths(7, array));
     }
 }

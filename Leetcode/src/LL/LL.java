@@ -1,38 +1,40 @@
 package LL;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class LL
 {
-      public static class ListNode
-      {
-          int val;
-          ListNode next;
+    public static class ListNode
+    {
+        int val;
+        ListNode next;
 
-          ListNode()
-          {
+        ListNode()
+        {
 
-          }
+        }
 
-          ListNode(int val)
-          {
-              this.val = val;
-          }
+        ListNode(int val)
+        {
+            this.val = val;
+        }
 
-          ListNode(int val, ListNode next)
-          {
-              this.val = val; this.next = next;
-          }
-      }
+        ListNode(int val, ListNode next)
+        {
+            this.val = val;
+            this.next = next;
+        }
+    }
 
     //1290. Convert Binary Number in a Linked List to Integer
     public static int getDecimalValue(ListNode head)
     {
         int size = (head != null) ? 1 : 0;
         ListNode temp = head;
-        while(temp.next != null)
+        while (temp.next != null)
         {
             size++;
             temp = temp.next;
@@ -40,7 +42,7 @@ public class LL
         int result = 0;
         for (int i = size - 1; i >= 0; i--)
         {
-            result += (int)Math.pow(2, i) * head.val;
+            result += (int) Math.pow(2, i) * head.val;
             head = head.next;
         }
 
@@ -50,19 +52,19 @@ public class LL
     //206. Reverse Linked List
     public static ListNode reverseList(ListNode head)
     {
-        if(head == null)
+        if (head == null)
             return head;
 
         int size = (head != null) ? 1 : 0;
         ListNode temp = head;
-        while(temp.next != null)
+        while (temp.next != null)
         {
             size++;
             temp = temp.next;
         }
 
         ListNode head1 = head;
-        for (int i = 0; i < size/2; i++)
+        for (int i = 0; i < size / 2; i++)
         {
             ListNode target = head1;
             for (int j = i; j < size - i - 1; j++)
@@ -82,13 +84,13 @@ public class LL
     {
         int size = (head != null) ? 1 : 0;
         ListNode temp = head;
-        while(temp.next != null)
+        while (temp.next != null)
         {
             size++;
             temp = temp.next;
         }
         temp = head;
-        for (int i = 1; i <= size/2; i++)
+        for (int i = 1; i <= size / 2; i++)
             temp = temp.next;
 
         return temp;
@@ -99,14 +101,13 @@ public class LL
     {
         ListNode head = new ListNode(-1);
         ListNode temp = head;
-        while(list1 != null && list2 != null)
+        while (list1 != null && list2 != null)
         {
-            if(list1.val <= list2.val)
+            if (list1.val <= list2.val)
             {
                 temp.next = list1;
                 list1 = list1.next;
-            }
-            else
+            } else
             {
                 temp.next = list2;
                 list2 = list2.next;
@@ -116,7 +117,7 @@ public class LL
         if (list1 != null)
             temp.next = list1;
 
-        if(list2 != null)
+        if (list2 != null)
             temp.next = list2;
         return head.next;
     }
@@ -124,16 +125,16 @@ public class LL
     //160. Intersection of Two Linked Lists
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB)
     {
-        if(headA == null || headB == null)
+        if (headA == null || headB == null)
             return null;
 
         ListNode tempA = headA, tempB = headB;
 
-        while(tempA != null)
+        while (tempA != null)
         {
             while (tempB != null)
             {
-                if(tempA == tempB)
+                if (tempA == tempB)
                     return tempA;
                 else
                     tempB = tempB.next;
@@ -154,7 +155,7 @@ public class LL
             ref1 = ref1.next;
             ref2 = ref2.next.next;
 
-            if(ref1 == ref2)
+            if (ref1 == ref2)
                 return true;
         }
         return false;
@@ -166,11 +167,10 @@ public class LL
         ListNode temp = head;
         while (temp != null && temp.next != null)
         {
-            if(temp.val == temp.next.val)
+            if (temp.val == temp.next.val)
             {
                 temp.next = temp.next.next;
-            }
-            else
+            } else
                 temp = temp.next;
         }
         return head;
@@ -184,16 +184,17 @@ public class LL
         ListNode temp2 = temp1;
         while (temp2.next != null)
         {
-            if(temp2.next.val == val)
+            if (temp2.next.val == val)
                 temp2.next = temp2.next.next;
             else
                 temp2 = temp2.next;
         }
         return temp1.next;
     }
+
     public static void display(ListNode head)
     {
-        while(head != null)
+        while (head != null)
         {
             System.out.print(head.val + " -> ");
             head = head.next;
@@ -207,11 +208,11 @@ public class LL
         int size = right - left + 1;
         for (int i = 2; i <= left; i++)
         {
-            if(i <= left)
+            if (i <= left)
                 start = start.next;
         }
         ListNode temp = start;
-        for (int i = 0; i < size/2; i++)
+        for (int i = 0; i < size / 2; i++)
         {
             ListNode target = temp;
             for (int j = i; j < size - i - 1; j++)
@@ -236,21 +237,22 @@ public class LL
             temp = temp.next;
             size++;
         }
-        if((size & 1) == 0)
-            reorderListHelper(head, size/2 - 1);
+        if ((size & 1) == 0)
+            reorderListHelper(head, size / 2 - 1);
         else
-            reorderListHelper(head, size/2);
+            reorderListHelper(head, size / 2);
     }
+
     public static void reorderListHelper(ListNode head, int i)
     {
-        if(i == 0)
+        if (i == 0)
         {
             return;
         }
 
         ListNode last2 = head, refNext = head.next;
         while (last2.next.next != null)
-            last2  = last2.next;
+            last2 = last2.next;
 
         ListNode last = last2.next;
 
@@ -258,7 +260,7 @@ public class LL
         head.next = last;
         last2.next = null;
 
-        reorderListHelper(refNext, i-1);
+        reorderListHelper(refNext, i - 1);
 
     }
 
@@ -272,16 +274,16 @@ public class LL
             temp = temp.next;
             size++;
         }
-        if(n > size || (n == 1 && size == 1))
+        if (n > size || (n == 1 && size == 1))
             return null;
-        if(n == size)
+        if (n == size)
         {
             head = head.next;
             return head;
         }
 
         temp = head;
-        while (size-- > n+1)
+        while (size-- > n + 1)
             temp = temp.next;
         temp.next = temp.next.next;
 
@@ -303,10 +305,10 @@ public class LL
         for (int i = 2; i <= k || i <= size + 1 - k; i++)
         {
 
-            if(i <= k)
+            if (i <= k)
                 temp1 = temp1.next;
 
-            if(i <= size - k + 1)
+            if (i <= size - k + 1)
                 temp2 = temp2.next;
 
         }
@@ -356,7 +358,7 @@ public class LL
 
             l2 = l2.next;
         }
-        while(carry > 0)
+        while (carry > 0)
         {
             temp2 = new ListNode(carry % 10);
             temp1.next = temp2;
@@ -369,10 +371,10 @@ public class LL
     //61. Rotate List
     public static ListNode rotateRight(ListNode head, int k)
     {
-        if(head == null)
+        if (head == null)
             return null;
 
-        if(k == 0)
+        if (k == 0)
             return head;
 
         ListNode temp = head;
@@ -401,14 +403,14 @@ public class LL
     //82. Remove Duplicates from Sorted List II
     public static ListNode deleteDuplicates2(ListNode head)
     {
-        if(head == null || head.next == null)
+        if (head == null || head.next == null)
             return head;
 
         Set<Integer> set = new HashSet<>();
         ListNode temp = head;
         while (temp.next != null)
         {
-            if(temp.val == temp.next.val)
+            if (temp.val == temp.next.val)
                 set.add(temp.val);
             temp = temp.next;
         }
@@ -417,7 +419,7 @@ public class LL
         temp = newHead;
         while (head != null)
         {
-            if(!set.contains(head.val))
+            if (!set.contains(head.val))
             {
                 temp.next = head;
                 temp = temp.next;
@@ -439,12 +441,11 @@ public class LL
         while (temp != null)
         {
             ListNode newNode = new ListNode(temp.val);
-            if(temp.val < x)
+            if (temp.val < x)
             {
                 less.next = newNode;
                 less = less.next;
-            }
-            else
+            } else
             {
                 greater.next = newNode;
                 greater = greater.next;
@@ -458,7 +459,7 @@ public class LL
     //24. Swap Nodes in Pairs
     public static ListNode swapPairs(ListNode head)
     {
-        if(head == null || head.next == null)
+        if (head == null || head.next == null)
             return head;
 
         ListNode odd = new ListNode(Integer.MAX_VALUE);
@@ -468,12 +469,11 @@ public class LL
         int pos = 1;
         while (h != null)
         {
-            if((pos & 1) == 1)
+            if ((pos & 1) == 1)
             {
                 o.next = h;
                 o = o.next;
-            }
-            else
+            } else
             {
                 e.next = h;
                 e = e.next;
@@ -503,7 +503,7 @@ public class LL
     public static ListNode removeZeroSumSublists(ListNode head)
     {
         ListNode h = head;
-        while(h != null)
+        while (h != null)
         {
             removeZeroSumSublistsHelper(h);
             h = h.next;
@@ -511,12 +511,12 @@ public class LL
 
         while (head != null && head.val == 0)
             head = head.next;
-        if(head == null)
+        if (head == null)
             return null;
         h = head;
-        while(h.next != null)
+        while (h.next != null)
         {
-            if(h.next.val == 0)
+            if (h.next.val == 0)
                 h.next = h.next.next;
             else
                 h = h.next;
@@ -524,6 +524,7 @@ public class LL
 
         return head;
     }
+
     private static void removeZeroSumSublistsHelper(ListNode head)
     {
         int sum = 0;
@@ -533,7 +534,7 @@ public class LL
             sum += h.val;
             h = h.next;
 
-            if(sum == 0)
+            if (sum == 0)
             {
                 end = h;
                 h = head;
@@ -546,11 +547,11 @@ public class LL
             }
         }
     }
-
+    
 
     public static void main(String[] args)
     {
-        int arr[] = {1,3,2,-3,-2,5,5,-5,1};
+        int arr[] = {1, 3, 2, -3, -2, 5, 5, -5, 1};
         ListNode head = createLL(arr);
 
 
@@ -566,8 +567,7 @@ public class LL
             {
                 head = new ListNode(val);
                 current = head;
-            }
-            else
+            } else
             {
                 current.next = new ListNode(val);
                 current = current.next;

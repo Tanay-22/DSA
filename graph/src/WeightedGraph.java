@@ -1,9 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class WeightedGraph
 {
@@ -52,5 +49,57 @@ public class WeightedGraph
             neighbours.add(new Vertex(x, weight));
             hashMap.put(y, neighbours);
         }
+    }
+
+    public int[] dijkstraWithPQ()
+    {
+        PriorityQueue<Vertex> priorityQueue = new PriorityQueue<Vertex>((x, y) -> x.weight - y.weight);
+        int v = this.hashMap.size();
+        int distance[] = new int[v];
+
+        Arrays.fill(distance, (int)1e9);
+        distance[0] = 0;
+        priorityQueue.offer(new Vertex(0, 0));
+
+        while(!priorityQueue.isEmpty())
+        {
+            Vertex current = priorityQueue.poll();
+            for(Vertex neighbour: this.hashMap.get(current.value))
+            {
+                int newDist = current.weight + neighbour.weight;
+                if(newDist < distance[current.value])
+                {
+                    distance[current.value] = newDist;
+                    priorityQueue.offer(new Vertex(neighbour.value, newDist));
+                }
+            }
+        }
+        return distance;
+    }
+
+    public int[] dijkstraWithSet()
+    {
+        PriorityQueue<Vertex> priorityQueue = new PriorityQueue<Vertex>((x, y) -> x.weight - y.weight);
+        int v = this.hashMap.size();
+        int distance[] = new int[v];
+
+        Arrays.fill(distance, (int)1e9);
+        distance[0] = 0;
+        priorityQueue.offer(new Vertex(0, 0));
+
+        while(!priorityQueue.isEmpty())
+        {
+            Vertex current = priorityQueue.poll();
+            for(Vertex neighbour: this.hashMap.get(current.value))
+            {
+                int newDist = current.weight + neighbour.weight;
+                if(newDist < distance[current.value])
+                {
+                    distance[current.value] = newDist;
+                    priorityQueue.offer(new Vertex(neighbour.value, newDist));
+                }
+            }
+        }
+        return distance;
     }
 }

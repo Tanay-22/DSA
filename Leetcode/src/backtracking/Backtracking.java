@@ -579,9 +579,10 @@ public class Backtracking
         countArrangementHelper(n, 1, count, flag);
         return count[0];
     }
+
     private static void countArrangementHelper(int n, int num, int count[], boolean flag[])
     {
-        if(num > n)
+        if (num > n)
         {
             count[0]++;
             return;
@@ -589,10 +590,10 @@ public class Backtracking
 
         for (int i = 1; i <= n; i++)
         {
-            if(flag[i-1])
+            if (flag[i - 1])
                 continue;
 
-            if(num % i == 0 || i % num == 0)
+            if (num % i == 0 || i % num == 0)
             {
                 flag[i - 1] = true;
                 countArrangementHelper(n, num + 1, count, flag);
@@ -650,10 +651,40 @@ public class Backtracking
         }
     }*/
 
+    //46. Permutations
+    public static List<List<Integer>> permute(int[] nums)
+    {
+        List<List<Integer>> ans = new ArrayList<>();
+        boolean flag[] = new boolean[nums.length];
+        List<Integer> list = new ArrayList<>();
+
+        permute(ans, list, nums, flag);
+
+        return ans;
+    }
+    private static void permute(List<List<Integer>> ans, List<Integer> list, int nums[], boolean flag[])
+    {
+        if(list.size() == nums.length)
+        {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++)
+        {
+            if(!flag[i])
+            {
+                flag[i] = true;
+                list.add(nums[i]);
+                permute(ans, list, nums, flag);
+                list.remove(list.size()-1);
+                flag[i] = false;
+            }
+        }
+    }
 
     public static void main(String[] args)
     {
-        int arr[] = {1, 1, 2};
-        System.out.println(countArrangement(2));
+        int arr[] = {0, 1};
+        System.out.println(permute(arr));
     }
 }
