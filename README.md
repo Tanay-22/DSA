@@ -3,6 +3,7 @@
 ## Overview
 
 This repository contains my solutions and progress tracking for LeetCode problems using Java. Each problem is solved using various data structures and algorithms to improve understanding and proficiency in programming.
+- LeetCode Profile: [Tanay22Pandey](https://leetcode.com/u/tanay22pandey/)
 
 ## Structure
 
@@ -10,8 +11,6 @@ The repository is organized by topics and difficulty levels. Each problem soluti
 
 - **Problem Statement**: Brief description of the problem.
 - **Solution**: Java code implementation.
-- **Complexity Analysis**: Time and space complexity analysis of the solution.
-- **Alternative Approaches**: Other possible solutions or optimizations.
 
 ## Example
 
