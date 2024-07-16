@@ -15,6 +15,15 @@ public class Main
             this.row = row;
             this.col = col;
         }
+
+        @Override
+        public String toString()
+        {
+            return "RCPair{" +
+                    "row=" + row +
+                    ", col=" + col +
+                    '}';
+        }
     }
 
     private class Node
@@ -1276,25 +1285,121 @@ public class Main
         return ways[n-1] % mod;
     }
 
+
+    // 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance
+    public int findTheCity(int n, int[][] edges, int distanceThreshold)
+    {
+        int distance[][] = new int[n][n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if(i != j)
+                    distance[i][j] = Integer.MAX_VALUE;
+            }
+        }
+        for (int i = 0; i < edges.length; i++)
+        {
+            distance[edges[i][0]][edges[i][1]] = edges[i][2];
+            distance[edges[i][1]][edges[i][0]] = edges[i][2];
+        }
+
+        for (int k = 0; k < n; k++)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if(distance[i][k] == Integer.MAX_VALUE || distance[k][j] == Integer.MAX_VALUE)
+                        continue;
+                    distance[i][j] = Math.min(distance[i][j], distance[i][k] + distance[k][j]);
+                }
+            }
+        }
+        int min = n;
+        int city = -1;
+        for (int i = 0; i < n; i++)
+        {
+            int count = 0;
+            for (int j = 0; j < n; j++)
+            {
+                if(distance[i][j] <= distanceThreshold)
+                    count++;
+            }
+            if(count <= min)
+            {
+                min = count;
+                city = i;
+            }
+        }
+        return city;
+    }
+
+    //  909. Snakes and Ladders
+    public int snakesAndLadders(int[][] board)
+    {
+        int n = board.length;
+        int[] dices = {1, 2, 3, 4, 5, 6};
+        boolean[] visited = new boolean[n*n];
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(1);
+        visited[0] = true;
+        int minCount = 0;
+
+        while (!queue.isEmpty())
+        {
+            int size = queue.size();
+            while (size > 0)
+            {
+                int currentPosition = queue.poll();
+                if(currentPosition == n * n)
+                    return minCount;
+
+                for (int steps: dices)
+                {
+                    int newNum = currentPosition + steps > n*n ? n*n : currentPosition + steps;
+                    RCPair newPosition = this.numToIndex(newNum, n);
+
+                    if(board[newPosition.row][newPosition.col] != -1)
+                        newNum = board[newPosition.row][newPosition.col];
+
+                    if(visited[newNum-1])
+                        continue;
+
+                    queue.offer(newNum);
+                    visited[newNum-1] = true;
+                }
+                size--;
+            }
+            minCount++;
+        }
+        return -1;
+    }
+    private RCPair numToIndex(int num, int n)
+    {
+        int r = (num - 1) / n;
+        int c = (num - 1) % n;
+        if (r % 2 == 1)
+            c = n - 1 - c;
+
+        int row = n - 1 - r;
+        int col = c;
+
+        return new RCPair(row, col);
+    }
+
     public static void main(String[] args)
     {
-        String words[] = {"hot", "dot", "dog", "lot", "log", "cog"};
-        int[][] array =
-        {
-            {0, 6, 7},
-            {0, 1, 2},
-            {1, 2, 3},
-            {1, 3, 3},
-            {6, 3, 3},
-            {3, 5, 1},
-            {6, 5, 1},
-            {2, 5, 1},
-            {0, 4, 5},
-            {4, 6, 2}
+        int[][] board = {
+                {-1, -1, 19, 10, -1},
+                { 2, -1, -1,  6, -1},
+                {-1, 17, -1, 19, -1},
+                {25, -1, 20, -1, -1},
+                {-1, -1, -1, -1, 15}
         };
-        int arr[] = {20, 14, 1, 4, 20};
+
 
         Main main = new Main();
-        System.out.println(main.countPaths(7, array));
+        System.out.println(main.snakesAndLadders(board));
     }
 }

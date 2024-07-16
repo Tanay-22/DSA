@@ -87,7 +87,8 @@ public class DirectedGraph
 
         stack.push(node);
     }
-
+    // linear ordering of vertices such that for every directed edge u -> v,
+    // where vertex u comes before v in the ordering.
     public int[] kahnsAlgo()
     {
         //bfs
@@ -124,4 +125,5 @@ public class DirectedGraph
         else
             return null;
     }
+    
 }

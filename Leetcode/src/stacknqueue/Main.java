@@ -422,7 +422,7 @@ public class Main
         Stack<String> stack = new Stack<>();
         for (int i = 0; i < tokens.length; i++)
         {
-            if(tokens[i].equals("+") || tokens[i].equals("-") || tokens[i].equals("/") || tokens[i].equals("*"))
+            if (tokens[i].equals("+") || tokens[i].equals("-") || tokens[i].equals("/") || tokens[i].equals("*"))
             {
                 int y = Integer.parseInt(stack.pop());
                 int x = Integer.parseInt(stack.pop());
@@ -447,8 +447,7 @@ public class Main
                         break;
                 }
                 stack.push(String.valueOf(res));
-            }
-            else
+            } else
                 stack.push(tokens[i]);
         }
         return Integer.parseInt(stack.pop());
@@ -469,22 +468,87 @@ public class Main
             }
             stack.clear();
         }
-        return (int)(sum % (long)(1e9 + 7));
+        return (int) (sum % (long) (1e9 + 7));
     }
 
-   
+    // 1190. Reverse Substrings Between Each Pair of Parentheses
+    public static String reverseParentheses(String s)
+    {
+        Stack<String> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++)
+        {
+            char ch = s.charAt(i);
+            if (ch == ')')
+            {
+                StringBuilder sb = new StringBuilder();
+                while (!stack.peek().equals("("))
+                    sb.append(stack.pop());
+                stack.pop();
+                stack.push(sb.reverse().toString());
+            } else
+                stack.push("" + ch);
+        }
+        StringBuilder res = new StringBuilder();
+        while (!stack.isEmpty())
+            res.append(stack.pop());
+
+        return res.reverse().toString();
+    }
+
+    //   726. Number of Atoms
+    public static String countOfAtoms(String formula)
+    {
+        Stack<HashMap<String, Integer>> stack = new Stack<>();
+        stack.push(new HashMap<>());
+        int length = formula.length();
+        for (int i = 0; i < length; )
+        {
+            char ch = formula.charAt(i);
+            if (ch == '(')
+            {
+                stack.push(new HashMap<>());
+                i++;
+            }
+            else if (ch == ')')
+            {
+                HashMap<String, Integer> hashMap = stack.pop();
+                int start = i + 1;
+                i++;
+                while (i < length && Character.isDigit(formula.charAt(i)))
+                    i++;
+                int molecules = start == i ? 1 : Integer.parseInt(formula.substring(start, i));
+                for (String element : hashMap.keySet())
+                    stack.peek().put(element, stack.peek().getOrDefault(element, 0) +
+                            hashMap.get(element) * molecules);
+            }
+            else
+            {
+                int start = i;
+                i++;
+                while (i < length && Character.isLowerCase(formula.charAt(i)))
+                    i++;
+                String element = formula.substring(start, i);
+                start = i;
+                while (i < length && Character.isDigit(formula.charAt(i)))
+                    i++;
+                int molecules = start == i ? 1 : Integer.parseInt(formula.substring(start, i));
+                stack.peek().put(element, stack.peek().getOrDefault(element, 0) + molecules);
+            }
+        }
+        List<String> order = new ArrayList<>(stack.peek().keySet());
+        Collections.sort(order);
+        StringBuilder sb = new StringBuilder();
+        for (String element : order)
+        {
+            sb.append(element);
+            sb.append(stack.peek().get(element) != 1 ? stack.peek().get(element) : "");
+        }
+        return sb.toString();
+    }
 
     public static void main(String[] args)
     {
-        LRUCache lRUCache = new LRUCache(2);
-        lRUCache.put(1, 1); // cache is {1=1}
-        lRUCache.put(2, 2); // cache is {1=1, 2=2}
-        System.out.println(lRUCache.get(1));    // return 1
-        lRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
-        System.out.println(lRUCache.get(2));    // returns -1 (not found)
-        lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
-        System.out.println(lRUCache.get(1));    // return -1 (not found)
-        System.out.println(lRUCache.get(3));    // return 3
-        System.out.println(lRUCache.get(4));    // return 4
+        String str = "(ed(et(oc))el)";
+        System.out.println(countOfAtoms("H2O"));
     }
 }

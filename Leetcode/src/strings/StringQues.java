@@ -470,12 +470,45 @@ public class StringQues
             sb.append(belowTwenty[num] + " ");
     }
 
+    //  125. Valid Palindrome
+    public static boolean isPalindrome(String s)
+    {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < s.length(); i++)
+        {
+            char ch = s.charAt(i);
+            if(ch >= 'A' && ch <= 'Z')
+                sb.append((char)(ch + 32));
+            else if((ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9'))
+                sb.append(ch);
+        }
+        for(int i = 0; i < sb.length(); i++)
+        {
+            if(sb.charAt(i) != sb.charAt(sb.length()-i-1))
+                return false;
+        }
+        return true;
+    }
 
-    
+
+    //  392. Is Subsequence
+    public static boolean isSubsequence(String s, String t)
+    {
+        int i = 0;
+        for (int j = 0; j < t.length(); j++)
+        {
+            if(i == s.length())
+                return true;
+
+            if(s.charAt(i) == t.charAt(j))
+                i++;
+        }
+        return i == s.length();
+    }
 
     public static void main(String[] args)
     {
         String arr[] = {"eat", "tea", "tan", "ate", "nat", "bat"};
-        System.out.println(numberToWords(50868));
+        System.out.println(isSubsequence("axc", "ahbgdc"));
     }
 }
