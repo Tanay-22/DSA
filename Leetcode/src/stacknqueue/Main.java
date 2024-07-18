@@ -546,9 +546,45 @@ public class Main
         return sb.toString();
     }
 
+    //  1598. Crawler Log Folder
+    public static int minOperations(String[] logs)
+    {
+        Stack<String> stack = new Stack<>();
+        for (int i = 0; i < logs.length; i++)
+        {
+            if(logs[i].equals("../"))
+            {
+                if(!stack.isEmpty())
+                    stack.pop();
+            }
+            else if(logs[i].equals("./"))
+                continue;
+            else
+                stack.push(logs[i]);
+        }
+        return stack.size();
+    }
+
+    //  1701. Average Waiting Time
+    public static double averageWaitingTime(int[][] customers)
+    {
+        int st = 0, ct = 0, tat = 0;
+        double wtSum = 0;
+
+        for (int[] task: customers)
+        {
+            st = ct > task[0] ? ct : task[0];
+            ct = st + task[1];
+            wtSum += ct - task[0];  //wt = st + at
+        }
+        return 1.0 * wtSum / customers.length;
+    }
+
     public static void main(String[] args)
     {
         String str = "(ed(et(oc))el)";
-        System.out.println(countOfAtoms("H2O"));
+        int arr[][] ={{1,2},{2,5},{4,3}};
+
+        System.out.println(averageWaitingTime(arr));
     }
 }

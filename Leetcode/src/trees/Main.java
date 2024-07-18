@@ -784,31 +784,104 @@ public class Main
         return root;
     }
 
+    //  2096. Step-By-Step Directions From a Binary Tree Node to Another
+    public static String getDirections(TreeNode root, int startValue, int destValue)
+    {
+        TreeNode lca = lowestCommonAncestor(root, startValue, destValue);
+        StringBuilder sb = new StringBuilder();
+        getPath(lca, startValue, sb);
+        int upLen = sb.length();
+        sb = new StringBuilder();
+        for (int i = 0; i < upLen; i++)
+            sb.append("U");
+
+        getPath(lca, destValue, sb);
+
+        return sb.toString();
+    }
+
+    private static TreeNode lowestCommonAncestor(TreeNode root, int p, int q)
+    {
+        if (root == null)
+            return null;
+
+        if (root.val == p || root.val == q)
+            return root;
+
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+        if (left != null && right != null)
+            return root;
+
+        return left == null ? right : left;
+    }
+
+    private static boolean getPath(TreeNode node, int target, StringBuilder path)
+    {
+        if (node == null)
+            return false;
+
+        if (node.val == target)
+            return true;
+
+        path.append("L");
+        if (getPath(node.left, target, path))
+            return true;
+        path.setLength(path.length() - 1);
+
+        path.append("R");
+        if (getPath(node.right, target, path))
+            return true;
+        path.setLength(path.length() - 1);
+
+        return false;
+    }
+
+
+    //  1110. Delete Nodes And Return Forest
+    public static List<TreeNode> delNodes(TreeNode root, int[] to_delete)
+    {
+        List<TreeNode> forest = new ArrayList<>();
+        Set<Integer> toDeleteSet = new HashSet<>();
+
+        for (int val : to_delete)
+            toDeleteSet.add(val);
+
+        if (!toDeleteSet.contains(root.val))
+            forest.add(root);
+
+        deleteNodes(root, toDeleteSet, forest);
+        return forest;
+    }
+    private static TreeNode deleteNodes(TreeNode node, Set<Integer> toDeleteSet, List<TreeNode> forest)
+    {
+        if (node == null)
+            return null;
+
+        node.left = deleteNodes(node.left, toDeleteSet, forest);
+        node.right = deleteNodes(node.right, toDeleteSet, forest);
+
+        if (toDeleteSet.contains(node.val))
+        {
+            if (node.left != null)
+                forest.add(node.left);
+            if (node.right != null)
+                forest.add(node.right);
+            return null;
+        }
+        return node;
+    }
+
+
+
+
     public static void main(String[] args)
     {
-        Integer arr[] = {3, 1, 4, null, null, 2};
+        Integer arr[] = {1,2,3,null,4};
         TreeNode root = createTree(arr);
+        
 
-        int[][] array =
-                {
-                        {20, 15, 1},
-                        {20, 17, 0},
-                        {50, 20, 1},
-                        {50, 80, 0},
-                        {80, 19, 1}
-                };
-        int[][] descriptions =
-                {
-                        {85, 82, 1},
-                        {74, 85, 1},
-                        {39, 70, 0},
-                        {82, 38, 1},
-                        {74, 39, 0},
-                        {39, 13, 1}
-                };
-
-
-        displayTree(createBinaryTree(descriptions));
     }
 
     public static TreeNode createTree(Integer values[])

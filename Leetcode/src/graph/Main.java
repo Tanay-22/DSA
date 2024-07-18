@@ -1388,18 +1388,167 @@ public class Main
         return new RCPair(row, col);
     }
 
+
+    //
+    public int[] findRedundantConnection(int[][] edges)
+    {
+        Set<Integer> set = new HashSet<>();
+        for(int[] e: edges)
+        {
+            if(set.contains(e[0]) && set.contains(e[1]))
+                return e;
+            else
+            {
+                set.add(e[0]);
+                set.add(e[1]);
+            }
+
+        }
+        return null;
+    }
+
+    //  721. Accounts Merge
+    public List<List<String>> accountsMerge(List<List<String>> accounts)
+    {
+        int n = accounts.size();
+        List<List<String>> ans = new ArrayList<>();
+        DisjointSet disjointSet = new DisjointSet(n);
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+        for (int i = 0; i < accounts.size(); i++)
+        {
+            List<String> list = accounts.get(i);
+            for (int j = 1; j < list.size(); j++)
+            {
+                if(!hashMap.containsKey(list.get(j)))
+                    hashMap.put(list.get(j), i);
+                else
+                    disjointSet.unionBySize(i, hashMap.get(list.get(j)));
+            }
+        }
+        List<String>[] mergeMail = new ArrayList[n];
+        for (int i = 0; i < n; i++)
+            mergeMail[i] = new ArrayList<>();
+
+        for (Map.Entry<String, Integer> set: hashMap.entrySet())
+        {
+            String mail = set.getKey();
+            int node = disjointSet.findParent(set.getValue());
+            mergeMail[node].add(mail);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            if(mergeMail[i].size() == 0)
+                continue;
+            Collections.sort(mergeMail[i]);
+            List<String> temp = new ArrayList<>();
+            temp.add(accounts.get(i).get(0));
+            for (String j: mergeMail[i])
+                temp.add(j);
+            ans.add(temp);
+        }
+        return ans;
+    }
+
+    // 827. Making A Large Island
+    public int largestIsland(int[][] grid)
+    {
+        int n = grid.length;
+        DisjointSet disjointSet = new DisjointSet(n * n);
+        int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if(grid[i][j] == 0)
+                    continue;
+                for(int direction[]: directions)
+                {
+                    int nrow = i + direction[0];
+                    int ncol = j + direction[1];
+
+                    if(nrow >= 0 && nrow < n && ncol >= 0 && ncol < n && grid[nrow][ncol] == 1)
+                    {
+                        int num = n * i + j;
+                        int nNum = n * nrow + ncol;
+                        disjointSet.unionBySize(num, nNum);
+                    }
+                }
+            }
+        }
+        int max = 0;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (grid[i][j] == 1)
+                    continue;
+                Set<Integer> components = new HashSet<>();
+                for(int direction[]: directions)
+                {
+                    int nrow = i + direction[0];
+                    int ncol = j + direction[1];
+
+                    if(nrow >= 0 && nrow < n && ncol >= 0 && ncol < n && grid[nrow][ncol] == 1)
+                        components.add(disjointSet.findParent(nrow * n + ncol));
+                }
+                int sizeTotal = 0;
+                for (Integer parent: components)
+                    sizeTotal += disjointSet.size.get(parent);
+                max = Math.max(max, sizeTotal + 1);
+            }
+        }
+        for (int i = 0; i < n * n; i++)
+            max = Math.max(max, disjointSet.size.get(i));
+
+        return max;
+    }
+
+    public int removeStones(int[][] stones)
+    {
+        int n = stones.length;
+        int maxRow = 0;
+        int maxCol = 0;
+        for (int i = 0; i < n; i++)
+        {
+            maxRow = Math.max(maxRow, stones[i][0]);
+            maxCol = Math.max(maxCol, stones[i][1]);
+        }
+        DisjointSet disjointSet = new DisjointSet(maxRow + maxCol + 1);
+        HashMap<Integer, Integer> stonesNodes = new HashMap<>();
+        for (int i = 0; i < n; i++)
+        {
+            int nodeRow = stones[i][0];
+            int nodeCol = stones[i][1] + maxRow + 1;
+            disjointSet.unionBySize(nodeRow, nodeCol);
+            stonesNodes.put(nodeRow, 1);
+            stonesNodes.put(nodeCol, 1);
+        }
+        int count = 0;
+        for(Map.Entry<Integer, Integer> set: stonesNodes.entrySet())
+        {
+            if(disjointSet.findParent(set.getKey()) == set.getKey())
+                count++;
+        }
+        return n - count;
+    }
+
     public static void main(String[] args)
     {
-        int[][] board = {
-                {-1, -1, 19, 10, -1},
-                { 2, -1, -1,  6, -1},
-                {-1, 17, -1, 19, -1},
-                {25, -1, 20, -1, -1},
-                {-1, -1, -1, -1, 15}
+        int[][] board =
+        {
+            { 1, 1},
+            { 1, 0},
         };
-
+        List<List<String>> accounts = Arrays.asList(
+                Arrays.asList("John", "johnsmith@mail.com", "john_newyork@mail.com"),
+                Arrays.asList("John", "johnsmith@mail.com", "john00@mail.com"),
+                Arrays.asList("Mary", "mary@mail.com"),
+                Arrays.asList("John", "johnnybravo@mail.com")
+        );
 
         Main main = new Main();
-        System.out.println(main.snakesAndLadders(board));
+        System.out.println(main.largestIsland(board));
     }
 }

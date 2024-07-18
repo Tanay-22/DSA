@@ -334,10 +334,35 @@ public class ArrayLC
         return j;
     }
 
+    //  1823. Find the Winner of the Circular Game
+    public static int findTheWinner(int n, int k)
+    {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 1; i <= n; i++)
+            list.add(i);
+
+        int start = 0;
+        while (list.size() != 1)
+        {
+            int knockout = (start + k - 1) % list.size();
+            list.remove(knockout);
+            start = knockout;
+            if(start >= list.size())
+                start -= list.size();
+        }
+        return list.get(0);
+    }
+    private static boolean isOdd(int num)
+    {
+        return (num & 1) == 1;
+    }
+
+
+
 
     public static void main(String[] args)
     {
         int[] arr = {0,1,2,2,3,0,4,2};
-        System.out.println(removeElement(arr, 2));
+        System.out.println(isOdd(35));
     }
 }
