@@ -1,33 +1,9 @@
 package LL;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class LL
 {
-    public static class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode()
-        {
-
-        }
-
-        ListNode(int val)
-        {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     //1290. Convert Binary Number in a Linked List to Integer
     public static int getDecimalValue(ListNode head)
@@ -107,7 +83,8 @@ public class LL
             {
                 temp.next = list1;
                 list1 = list1.next;
-            } else
+            }
+            else
             {
                 temp.next = list2;
                 list2 = list2.next;
@@ -547,14 +524,322 @@ public class LL
             }
         }
     }
-    
+
+    // 23. Merge k Sorted Lists
+    public static ListNode mergeKLists(ListNode[] lists)
+    {
+        for (int i = 1; i < lists.length; i++)
+            lists[0] = mergeTwoLists(lists[0], lists[i]);
+        return lists[0];
+    }
+
+
+    //  1669. Merge In Between Linked Lists
+    public static ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2)
+    {
+        ListNode start = list1, end = list1;
+
+        for (int i = 0; i <= b; i++)
+        {
+            if(i < a-1)
+                start = start.next;
+            end = end.next;
+        }
+//        System.out.println(start.val + " " + end.val);
+
+        start.next = list2;
+        while (list2.next != null)
+            list2 = list2.next;
+        list2.next = end;
+
+        return list1;
+    }
+
+
+    //  2181. Merge Nodes in Between Zeros
+    public static ListNode mergeNodes(ListNode head)
+    {
+        ListNode node = head;
+        while (node != null)
+        {
+            if(node.val == 0)
+            {
+                ListNode temp = node;
+                int val = 0;
+                node = node.next;
+                while (node.val != 0)
+                {
+                    val += node.val;
+                    node = node.next;
+                }
+                if(node.next == null)
+                    node = null;
+                temp.val = val;
+                temp.next = node;
+            }
+        }
+        return head;
+    }
+
+
+    //  817. Linked List Components
+    public static int numComponents(ListNode head, int[] nums)
+    {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < nums.length; i++)
+            hashMap.put(nums[i], nums[i]);
+
+        ListNode temp = head;
+        int count = 0;
+        while (temp != null)
+        {
+            while (temp != null && hashMap.containsKey(temp.val))
+                temp = temp.next;
+            count++;
+
+            if(temp != null)
+                temp = temp.next;
+        }
+        return count;
+    }
+
+    //  2058. Find the Minimum and Maximum Number of Nodes Between Critical Points
+    public static int[] nodesBetweenCriticalPoints(ListNode head)
+    {
+        List<Integer> criticalPoints = new ArrayList<>();
+
+        ListNode temp = head;
+        int pos = 2;
+        while (temp != null && temp.next != null && temp.next.next != null)
+        {
+            if(temp.next.val > temp.val && temp.next.val > temp.next.next.val)
+                criticalPoints.add(pos);  // local maxima
+
+            if(temp.next.val < temp.val && temp.next.val < temp.next.next.val)
+                criticalPoints.add(pos);  // local minima
+
+            temp = temp.next;
+            pos++;
+        }
+//        System.out.println(criticalPoints);
+        if(criticalPoints.size() < 2)
+            return new int[]{-1, -1};
+
+        int arr[] = new int[2];
+        arr[0] = Integer.MAX_VALUE;
+        for (int i = 0; i < criticalPoints.size() - 1; i++)
+            arr[0] = Math.min(criticalPoints.get(i+1) - criticalPoints.get(i), arr[0]);
+
+        arr[1] = criticalPoints.get(criticalPoints.size()-1) - criticalPoints.get(0);
+        return arr;
+    }
+
+    //  725. Split Linked List in Parts
+    public static ListNode[] splitListToParts(ListNode head, int k)
+    {
+        int totalSize = 0;
+        ListNode temp = head;
+        ListNode[] result = new ListNode[k];
+        while(temp != null)
+        {
+            totalSize++;
+            temp = temp.next;
+        }
+        int partSize = totalSize / k;
+        int addOns = totalSize % k;
+        temp = head;
+        int i = 0;
+        while (i < k && (partSize > 0 || addOns > 0))
+        {
+            if(temp == null)
+            {
+                result[i++] = null;
+                continue;
+            }
+            result[i++] = temp;
+            for (int j = 0; j < partSize; j++)
+                temp = temp.next;
+
+            if(addOns > 0)
+            {
+                addOns--;
+                temp = temp.next;
+            }
+        }
+        for (int j = 0; j < k - 1; j++)
+        {
+            if(result[j] == null)
+                break;
+            temp = result[j];
+            while (temp != null && temp.next != null && temp.next != result[j+1])
+                temp = temp.next;
+            temp.next = null;
+        }
+        return result;
+    }
+
+
+    public static Node flatten(Node head)
+    {
+        Node current = head;
+        while (current != null)
+        {
+            if(current.child != null)
+            {
+                Node mid = flatten(current.child);
+                Node next = current.next;
+
+                if(next != null)
+                {
+                    mid.next = next;
+                    next.prev = mid;
+                }
+                current.next = current.child;
+                current.child.prev = current;
+
+                current.child = null;
+                Node tail = mid;
+                while (tail.next != null)
+                    tail = tail.next;
+
+                if (next != null)
+                {
+                    tail.next = next;
+                    next.prev = tail;
+                }
+            }
+            current = current.next;
+        }
+        return head;
+    }
+
+
+    //  328. Odd Even Linked List
+    public static ListNode oddEvenList(ListNode head)
+    {
+        ListNode evenHead = new ListNode(0);
+        ListNode oddHead = new ListNode(0);
+
+        ListNode odd = oddHead, even = evenHead;
+        int i = 1;
+        while (head != null)
+        {
+            if((i & 1) == 1)
+            {
+                odd.next = head;
+                odd = odd.next;
+            }
+            else
+            {
+                even.next = head;
+                even = even.next;
+            }
+            i++;
+            head = head.next;
+        }
+        even.next = null;
+        odd.next = evenHead.next;
+
+        return oddHead.next;
+    }
+
+    //  445. Add Two Numbers II
+    public static ListNode addTwoNumbers2(ListNode l1, ListNode l2)
+    {
+        ListNode head = null;
+        int carry = 0;
+        Stack<ListNode> stack1 = new Stack<>();
+        Stack<ListNode> stack2 = new Stack<>();
+
+        while (l1 != null)
+        {
+            stack1.push(l1);
+            l1 = l1.next;
+        }
+        while (l2 != null)
+        {
+            stack2.push(l2);
+            l2 = l2.next;
+        }
+        while (!stack1.isEmpty() || !stack2.isEmpty() || carry != 0)
+        {
+            int sum = carry;
+
+            if (!stack1.isEmpty())
+                sum += stack1.pop().val;
+
+            if (!stack2.isEmpty())
+                sum += stack2.pop().val;
+
+            ListNode node = new ListNode(sum % 10);
+            carry = sum / 10;
+
+            node.next = head;
+            head = node;
+        }
+        ListNode t = head;
+
+        return head;
+    }
+
+
+    /*public NodeR copyRandomList(NodeR head)
+    {
+        HashMap<NodeR, NodeR> hashMap = new HashMap<>();
+        NodeR h = new NodeR(0);
+        NodeR temp = head, t = h;
+        while(temp != null)
+        {
+            if(temp.random != null)
+                hashMap.put(temp, temp.random);
+
+            NodeR node = new NodeR(temp.val);
+            t.next = node;
+            t = node;
+        }
+
+    }*/
+
+    //  25. Reverse Nodes in k-Group
+    public static ListNode reverseKGroup(ListNode head, int k)
+    {
+        if(head == null || head.next == null)
+            return head;
+
+        Stack<ListNode> stack = new Stack<>();
+        ListNode temp = head, newHead = new ListNode(0);
+        ListNode t = newHead;
+        while (temp != null)
+        {
+            if(stack.size() == k)
+            {
+                while (!stack.isEmpty())
+                {
+                    t.next = stack.pop();
+                    t = t.next;
+                }
+                t.next = temp;
+            }
+            stack.push(temp);
+            temp = temp.next;
+        }
+        if(stack.size() == k)
+        {
+            while (!stack.isEmpty())
+            {
+                t.next = stack.pop();
+                t = t.next;
+            }
+            t.next = temp;
+        }
+        return newHead.next;
+    }
 
     public static void main(String[] args)
     {
-        int arr[] = {1, 3, 2, -3, -2, 5, 5, -5, 1};
-        ListNode head = createLL(arr);
-
-
+        int[] l1 = {1,2,3,4,5}, l2 = {5,6,4};
+        ListNode node =  reverseKGroup(createLL(l1), 3);
+        displayLL(node);
     }
 
     public static ListNode createLL(int arr[])

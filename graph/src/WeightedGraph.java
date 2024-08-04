@@ -93,9 +93,9 @@ public class WeightedGraph
             for(Vertex neighbour: this.hashMap.get(current.value))
             {
                 int newDist = current.weight + neighbour.weight;
-                if(newDist < distance[current.value])
+                if(newDist < distance[neighbour.value])
                 {
-                    distance[current.value] = newDist;
+                    distance[neighbour.value] = newDist;
                     priorityQueue.offer(new Vertex(neighbour.value, newDist));
                 }
             }

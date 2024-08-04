@@ -17,12 +17,6 @@ public class Main
         return dp[n];
     }
 
-
-    public static int maxProduct(int[] nums)
-    {
-        return 0;
-    }
-
     public static void main(String[] args)
     {
         System.out.println(climbStairs(2));

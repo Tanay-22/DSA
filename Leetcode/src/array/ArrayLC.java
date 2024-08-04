@@ -357,12 +357,119 @@ public class ArrayLC
         return (num & 1) == 1;
     }
 
+    //  1605. Find Valid Matrix Given Row and Column Sums
+    public static int[][] restoreMatrix(int[] rowSum, int[] colSum)
+    {
+        int m = rowSum.length, n = colSum.length;
+        int[][] arr = new int[m][n];
 
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if(rowSum[i] == 0 || colSum[j] == 0)
+                    continue;
+                else
+                {
+                    int min = Math.min(rowSum[i], colSum[j]);
+                    arr[i][j] = min;
+                    rowSum[i] -= min;
+                    colSum[j] -= min;
+                }
+            }
+        }
+        return arr;
+    }
+
+    //  1380. Lucky Numbers in a Matrix
+    public static List<Integer> luckyNumbers (int[][] matrix)
+    {
+        int m = matrix.length, n = matrix[0].length;
+
+        int[] rowMin = new int[m];
+        int[] colMax = new int[n];
+
+        for(int i = 0; i < m; i++)
+        {
+            int min = Integer.MAX_VALUE;
+            for (int j = 0; j < n; j++)
+            {
+                if(min > matrix[i][j])
+                {
+                    min = matrix[i][j];
+                    rowMin[i] = j;
+                }
+            }
+        }
+        for(int j = 0; j < n; j++)
+        {
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < m; i++)
+            {
+                if(max < matrix[i][j])
+                {
+                    max = matrix[i][j];
+                    colMax[j] = i;
+                }
+            }
+        }
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < m; i++)
+        {
+            if(i == colMax[rowMin[i]])
+                list.add(matrix[i][rowMin[i]]);
+        }
+        return list;
+    }
+
+
+    public static int rangeSum(int[] nums, int n, int left, int right)
+    {
+        int mod = (int)1e9 + 7;
+        int sum[] = new int[n*(n+1)/2];
+        int c = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int s = nums[i];
+            for (int j = i+1; j < n; j++)
+            {
+                sum[c++] = s;
+                s += nums[j];
+            }
+            sum[c++] = s;
+        }
+        long res = 0l;
+        Arrays.sort(sum);
+        for (int i = left-1; i < right; i++)
+            res += sum[i];
+
+        return (int)(res % mod);
+    }
+
+
+    public static int minSubArrayLen(int target, int[] nums)
+    {
+        int n = nums.length;
+        int left = 0, right = 0;
+        long sum = 0L;
+        int minLength = Integer.MAX_VALUE;
+
+        while(right < n)
+        {
+            sum += nums[right++];
+            while (sum >= target)
+            {
+                minLength = Math.min(minLength, right - left);
+                sum -= nums[left++];
+            }
+        }
+        return minLength == Integer.MAX_VALUE ? 0 : minLength;
+    }
 
 
     public static void main(String[] args)
     {
-        int[] arr = {0,1,2,2,3,0,4,2};
-        System.out.println(isOdd(35));
+        int[] nums = {5,1,3,5,10,7,4,9,2,8};
+        System.out.println(minSubArrayLen(15, nums));
     }
 }

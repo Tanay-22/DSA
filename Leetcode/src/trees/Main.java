@@ -873,15 +873,46 @@ public class Main
         return node;
     }
 
+    //  617. Merge Two Binary Trees
+    public static TreeNode mergeTrees(TreeNode root1, TreeNode root2)
+    {
+        if(root1 == null)
+            return root2;
+        else if(root2 == null)
+            return root1;
+        else
+            return mergeTreesHelper(root1, root2);
+    }
+    private static TreeNode mergeTreesHelper(TreeNode node1, TreeNode node2)
+    {
+        if(node1 == null && node2 == null)
+            return null;
+
+
+        if(node1 == null)
+            return node2;
+
+        if(node2 == null)
+            return node1;
+
+        node1.left = mergeTreesHelper(node1.left, node2.left);
+        node1.right = mergeTreesHelper(node1.right, node2.right);
+
+        node1.val += node2.val;
+
+        return node1;
+    }
+
 
 
 
     public static void main(String[] args)
     {
-        Integer arr[] = {1,2,3,null,4};
-        TreeNode root = createTree(arr);
-        
+        Integer arr[] = {1,2,null,3} , arr2[] ={1,null,2,null,3};
+        TreeNode root1 = createTree(arr);
+        TreeNode root2 = createTree(arr2);
 
+        displayTree(mergeTrees(root1, root2));
     }
 
     public static TreeNode createTree(Integer values[])

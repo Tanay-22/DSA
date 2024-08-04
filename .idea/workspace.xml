@@ -5,25 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c42423ee-3d32-4a0d-bddf-365dfa076cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/dp/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/graph/DisjointSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/tries/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/tries/WordDictionary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dp/dp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dp/src/KnapSack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph/src/DisjointSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph/src/Edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/NodeR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/dp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/dp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/graph/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/graph/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/stacknqueue/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PatternQuestions/src/com/tanay/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/PatternQuestions/src/com/tanay/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/src/MinimumSpanningTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/src/MinimumSpanningTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/src/WeightedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/src/WeightedGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LL$ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/array/ArrayLC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/array/ArrayLC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/dp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/dp/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/graph/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/graph/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/stacknqueue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/stacknqueue/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/trees/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,46 +69,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.AVL.executor": "Run",
-    "Application.ArrayLC.executor": "Run",
-    "Application.Backtracking.executor": "Run",
-    "Application.BasicCalculator2.executor": "Run",
-    "Application.Graph.executor": "Debug",
-    "Application.KnapSack.executor": "Run",
-    "Application.LL.executor": "Debug",
-    "Application.Mai2.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.QuickSort.executor": "Run",
-    "Application.Search.executor": "Run",
-    "Application.StringQues.executor": "Run",
-    "Application.com.tanay.Main.executor": "Run",
-    "Application.dp.Main.executor": "Run",
-    "Application.graph.Main.executor": "Run",
-    "Application.heaps.Main.executor": "Debug",
-    "Application.stacknqueue.Main.executor": "Run",
-    "Application.trees.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "20",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Projects/Trading Platform/trading-react",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.AVL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ArrayLC.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Backtracking.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BasicCalculator2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Graph.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.KnapSack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Mai2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QuickSort.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Search.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StringQues.executor&quot;: &quot;Run&quot;,
+    &quot;Application.com.tanay.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.dp.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.graph.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.heaps.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.stacknqueue.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.trees.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DSA&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -250,6 +246,27 @@
       <workItem from="1721242342992" duration="368000" />
       <workItem from="1721285493365" duration="874000" />
       <workItem from="1721298833991" duration="1179000" />
+      <workItem from="1721316783062" duration="1316000" />
+      <workItem from="1721318431037" duration="7000" />
+      <workItem from="1721448733342" duration="2052000" />
+      <workItem from="1721453201097" duration="10798000" />
+      <workItem from="1721483216733" duration="13000" />
+      <workItem from="1721798612193" duration="1566000" />
+      <workItem from="1721806059623" duration="59000" />
+      <workItem from="1721806177473" duration="26000" />
+      <workItem from="1721809617737" duration="150000" />
+      <workItem from="1721809785949" duration="629000" />
+      <workItem from="1721889348070" duration="600000" />
+      <workItem from="1721894611572" duration="265000" />
+      <workItem from="1722093004197" duration="1609000" />
+      <workItem from="1722095009084" duration="5717000" />
+      <workItem from="1722152608753" duration="204000" />
+      <workItem from="1722254439809" duration="52000" />
+      <workItem from="1722617589781" duration="115000" />
+      <workItem from="1722693248505" duration="11085000" />
+      <workItem from="1722758266030" duration="4730000" />
+      <workItem from="1722778169625" duration="2773000" />
+      <workItem from="1722796690916" duration="1685000" />
     </task>
     <servers />
   </component>
@@ -734,7 +751,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
-          <line>502</line>
+          <line>479</line>
           <properties class="LL.LL" method="removeZeroSumSublists">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -1353,9 +1370,99 @@
           </properties>
           <option name="timeStamp" value="266" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java</url>
+          <line>384</line>
+          <properties class="array.ArrayLC" method="luckyNumbers">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="267" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/trees/Main.java</url>
+          <line>885</line>
+          <properties class="trees.Main" method="mergeTreesHelper">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="268" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
+          <line>559</line>
+          <properties class="LL.LL" method="mergeNodes">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="270" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/graph/Main.java</url>
+          <line>1591</line>
+          <properties class="graph.Main" method="dijsktra">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/graph/Main.java</url>
+          <line>1548</line>
+          <properties class="graph.Main" method="minimumCost">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
+          <line>606</line>
+          <properties class="LL.LL" method="nodesBetweenCriticalPoints">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
+          <line>637</line>
+          <properties class="LL.LL" method="splitListToParts">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="278" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
+          <line>746</line>
+          <properties class="LL.LL" method="addTwoNumbers2">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="279" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java</url>
+          <line>449</line>
+          <properties class="array.ArrayLC" method="minSubArrayLen">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="280" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
+          <line>803</line>
+          <properties class="LL.LL" method="reverseKGroup">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="281" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
-          <line>419</line>
+          <line>396</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

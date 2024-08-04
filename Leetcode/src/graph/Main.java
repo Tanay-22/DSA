@@ -1534,21 +1534,101 @@ public class Main
         return n - count;
     }
 
+    //  2976. Minimum Cost to Convert String I
+    private class Vertex
+    {
+        int value;
+        int weight;
+
+        public Vertex(int value, int weight)
+        {
+            this.value = value;
+            this.weight = weight;
+        }
+    }
+    public long minimumCost(String source, String target, char[] original, char[] changed, int[] cost)
+    {
+        List<List<Vertex>> list = new ArrayList<>();
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        int count = 0;
+        for (int i = 0; i < original.length; i++)
+        {
+            if(!hashMap.containsKey(original[i]))
+            {
+                hashMap.put(original[i], count++);
+                list.add(new ArrayList<>());
+            }
+        }
+        for (int i = 0; i < changed.length; i++)
+        {
+            if(!hashMap.containsKey(changed[i]))
+            {
+                hashMap.put(changed[i], count++);
+                list.add(new ArrayList<>());
+            }
+        }
+        for (int i = 0; i < original.length; i++)
+        {
+            Vertex node = new Vertex(hashMap.get(changed[i]), cost[i]);
+            list.get(hashMap.get(original[i])).add(node);
+        }
+        long totalCost = 0l;
+        for (int i = 0; i < source.length(); i++)
+        {
+            if(source.charAt(i) != target.charAt(i))
+            {
+                if(!hashMap.containsKey(source.charAt(i)) || !hashMap.containsKey(target.charAt(i)))
+                    return -1;
+
+                int distance = dijsktra(list, hashMap.get(source.charAt(i)), hashMap.get(target.charAt(i)));
+                if(distance == -1)
+                    return -1;
+                totalCost += distance;
+            }
+        }
+
+        return totalCost;
+    }
+    private int dijsktra(List<List<Vertex>> list, int start, int target)
+    {
+        PriorityQueue<Vertex> priorityQueue = new PriorityQueue<>((x, y) -> x.weight - y.weight);
+        int v = list.size();
+        int distance[] = new int[v];
+
+        Arrays.fill(distance, Integer.MAX_VALUE);
+        distance[start] = 0;
+        priorityQueue.offer(new Vertex(start, 0));
+
+        while(!priorityQueue.isEmpty())
+        {
+            Vertex current = priorityQueue.poll();
+            if (current.value == target)
+                return distance[target];
+
+            for(Vertex neighbour: list.get(current.value))
+            {
+                int newDist = current.weight + neighbour.weight;
+                if(newDist < distance[neighbour.value])
+                {
+                    distance[neighbour.value] = newDist;
+                    priorityQueue.offer(new Vertex(neighbour.value, newDist));
+                }
+            }
+        }
+        return distance[target] == Integer.MAX_VALUE ? -1 : distance[target];
+    }
+
+
     public static void main(String[] args)
     {
-        int[][] board =
-        {
-            { 1, 1},
-            { 1, 0},
-        };
-        List<List<String>> accounts = Arrays.asList(
-                Arrays.asList("John", "johnsmith@mail.com", "john_newyork@mail.com"),
-                Arrays.asList("John", "johnsmith@mail.com", "john00@mail.com"),
-                Arrays.asList("Mary", "mary@mail.com"),
-                Arrays.asList("John", "johnnybravo@mail.com")
-        );
+        String source = "abcd";
+        String target = "acbe";
+        char[] original = {'a', 'b', 'c', 'c', 'e', 'd'};
+        char[] changed = {'b', 'c', 'b', 'e', 'b', 'e'};
+        int[] cost = {2, 5, 5, 1, 2, 20};
 
         Main main = new Main();
-        System.out.println(main.largestIsland(board));
+        System.out.println(main.minimumCost(source, target, original, changed, cost));
+
     }
 }
