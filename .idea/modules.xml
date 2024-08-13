@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/dp/dp.iml" filepath="$PROJECT_DIR$/dp/dp.iml" />
       <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
       <module fileurl="file://$PROJECT_DIR$/heap/heap.iml" filepath="$PROJECT_DIR$/heap/heap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/miscellaneous/miscellaneous.iml" filepath="$PROJECT_DIR$/miscellaneous/miscellaneous.iml" />
     </modules>
   </component>
 </project>

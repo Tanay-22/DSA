@@ -506,9 +506,95 @@ public class StringQues
         return i == s.length();
     }
 
+    //  383. Ransom Note
+    public static boolean canConstruct(String ransomNote, String magazine)
+    {
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for(int i = 0; i < magazine.length(); i++)
+        {
+            char ch = magazine.charAt(i);
+            hashMap.put(ch, hashMap.getOrDefault(ch, 0) + 1);
+        }
+        for(int i = 0; i < ransomNote.length(); i++)
+        {
+            char ch = ransomNote.charAt(i);
+            if(!hashMap.containsKey(ch) || hashMap.get(ch) == 0)
+                return false;
+            else
+                hashMap.put(ch, hashMap.get(ch)-1);
+        }
+        return true;
+    }
+
+    //  205. Isomorphic Strings
+    public static boolean isIsomorphic(String s, String t)
+    {
+        HashMap<Character, Character> hashMap = new HashMap<>();
+        for (int i = 0; i < s.length(); i++)
+        {
+            char ch1 = s.charAt(i);
+            char ch2 = t.charAt(i);
+            
+            if(!hashMap.containsKey(ch1) && !hashMap.containsValue(ch2))
+                hashMap.put(ch1, ch2);
+            else
+                return false;
+        }
+        return true;
+    }
+
+
+    public static String kthDistinct(String[] arr, int k)
+    {
+        List<String> list = new ArrayList<>();
+        Set<String> duplicates = new HashSet<>();
+        for (String s: arr)
+        {
+            if(list.contains(s))
+                duplicates.add(s);
+            else
+                list.add(s);
+        }
+        for (String s: duplicates)
+            list.remove(s);
+
+        return k > list.size() ? "" : list.toArray()[k-1].toString();
+    }
+
+    //  3016. Minimum Number of Pushes to Type Word II
+    public static int minimumPushes(String word)
+    {
+        HashMap<Character, Integer> freq = new HashMap<>();
+        for (int i = 0; i < word.length(); i++)
+        {
+            char ch = word.charAt(i);
+            freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+        }
+        List<Map.Entry<Character, Integer>> list = new ArrayList<>(freq.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Character, Integer>>()
+        {
+            @Override
+            public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2)
+            {
+                return (o2.getValue()).compareTo(o1.getValue());
+            }
+        });
+        int ans = 0, j = 0;
+        for(Map.Entry<Character, Integer> i : list)
+        {
+            int multiplier = j / 8 + 1;
+            ans += (multiplier * i.getValue());
+            j++;
+        }
+//        System.out.println(list);
+
+        return ans;
+    }
+
     public static void main(String[] args)
     {
-        String arr[] = {"eat", "tea", "tan", "ate", "nat", "bat"};
-        System.out.println(isSubsequence("axc", "ahbgdc"));
+        String word = "aabbccddeeffgghhiiiiii";
+        int k = 2;
+        System.out.println(minimumPushes(word));
     }
 }

@@ -1618,17 +1618,52 @@ public class Main
         return distance[target] == Integer.MAX_VALUE ? -1 : distance[target];
     }
 
+    // 399. Evaluate Division
+    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries)
+    {
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        int n = 0;
+        for (List<String> list: equations)
+        {
+            for (String s: list)
+            {
+                if(!hashMap.containsKey(s))
+                    hashMap.put(s, n++);
+            }
+        }
+        double[][] matrix = new double[n][n];
+        for (int i = 0; i < n; i++)
+            matrix[i][i] = 1;
+
+        for (int i = 0; i < equations.size(); i++)
+        {
+            List<String> list = equations.get(i);
+            matrix[hashMap.get(list.get(0))][hashMap.get(list.get(1))] = values[i];
+            matrix[hashMap.get(list.get(1))][hashMap.get(list.get(0))] = 1.0 / values[i];
+        }
+        return null;
+    }
+
 
     public static void main(String[] args)
     {
-        String source = "abcd";
-        String target = "acbe";
-        char[] original = {'a', 'b', 'c', 'c', 'e', 'd'};
-        char[] changed = {'b', 'c', 'b', 'e', 'b', 'e'};
-        int[] cost = {2, 5, 5, 1, 2, 20};
+        List<List<String>> equations = new ArrayList<>();
+        equations.add(Arrays.asList("a", "b"));
+        equations.add(Arrays.asList("b", "c"));
+
+        // Values
+        double[] values = {2.0, 3.0};
+
+        // Queries
+        List<List<String>> queries = new ArrayList<>();
+        queries.add(Arrays.asList("a", "c"));
+        queries.add(Arrays.asList("b", "a"));
+        queries.add(Arrays.asList("a", "e"));
+        queries.add(Arrays.asList("a", "a"));
+        queries.add(Arrays.asList("x", "x"));
 
         Main main = new Main();
-        System.out.println(main.minimumCost(source, target, original, changed, cost));
+        System.out.println(main.calcEquation(equations, values, queries));
 
     }
 }

@@ -466,10 +466,51 @@ public class ArrayLC
         return minLength == Integer.MAX_VALUE ? 0 : minLength;
     }
 
+    //  885. Spiral Matrix III
+    public static int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart)
+    {
+        List<int[]> list = new ArrayList<>();
+        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        int limit = rows * cols;
+        int r = rStart, c = cStart;
+        int d = 0, steps = 1;
+        while (list.size() < limit)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < steps; j++)
+                {
+                    if(r >= 0 && r < rows && c >= 0 && c < cols)
+                        list.add(new int[]{r, c});
+                    if(list.size() == limit)
+                        return convertIndexToArray(list, rows, cols);
+                    r += directions[d][0];
+                    c += directions[d][1];
+                }
+                d = (d + 1) % 4;
+            }
+            steps++;
+        }
+        return convertIndexToArray(list, rows, cols);
+    }
+    private static int[][] convertIndexToArray(List<int[]> list, int rows, int cols)
+    {
+        int[][] arr = new int[rows * cols][2];
+        int c = 0;
+        for (int i = 0; i < rows * cols; i++)
+            arr[i] = list.get(i);
+
+        return arr;
+    }
+
 
     public static void main(String[] args)
     {
-        int[] nums = {5,1,3,5,10,7,4,9,2,8};
-        System.out.println(minSubArrayLen(15, nums));
+        KthLargest kthLargest = new KthLargest(3, new int[]{4, 5, 8, 2});
+        System.out.println(kthLargest.add(3));   // return 4
+        System.out.println(kthLargest.add(5));   // return 5
+        System.out.println(kthLargest.add(10));  // return 5
+        System.out.println(kthLargest.add(9));   // return 8
+        System.out.println(kthLargest.add(4));   // return 8
     }
 }

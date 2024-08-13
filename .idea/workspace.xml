@@ -5,22 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c42423ee-3d32-4a0d-bddf-365dfa076cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/ListNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/LL/NodeR.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leetcode/src/array/KthLargest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sorting/src/CountSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sorting/src/RadixSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscellaneous/miscellaneous.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscellaneous/src/HuffmanCoding.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscellaneous/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscellaneous/src/MoAlgorithmn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/LL/LL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/dp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/dp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leetcode/src/graph/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/graph/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/trees/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/src/WeightedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/graph/src/WeightedGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LL$ListNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/LL/LL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/heaps/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/heaps/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leetcode/src/strings/StringQues.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/strings/StringQues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dp/src/KnapSack.java" beforeDir="false" afterPath="$PROJECT_DIR$/dp/src/KnapSack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/array/ArrayLC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/array/ArrayLC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/dp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/dp/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/graph/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/graph/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/trees/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/trees/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/heaps/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/heaps/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/strings/StringQues.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/strings/StringQues.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dp/KnapSack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dp/KnapSack.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +81,8 @@
     &quot;Application.ArrayLC.executor&quot;: &quot;Run&quot;,
     &quot;Application.Backtracking.executor&quot;: &quot;Run&quot;,
     &quot;Application.BasicCalculator2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CountSort.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EqualSumPartition.executor&quot;: &quot;Run&quot;,
     &quot;Application.Graph.executor&quot;: &quot;Debug&quot;,
     &quot;Application.KnapSack.executor&quot;: &quot;Run&quot;,
     &quot;Application.LL.executor&quot;: &quot;Run&quot;,
@@ -87,7 +94,7 @@
     &quot;Application.com.tanay.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.dp.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.graph.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.heaps.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.heaps.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.stacknqueue.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.trees.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -266,7 +273,25 @@
       <workItem from="1722693248505" duration="11085000" />
       <workItem from="1722758266030" duration="4730000" />
       <workItem from="1722778169625" duration="2773000" />
-      <workItem from="1722796690916" duration="1685000" />
+      <workItem from="1722796690916" duration="6950000" />
+      <workItem from="1722869012285" duration="2577000" />
+      <workItem from="1722951501120" duration="5826000" />
+      <workItem from="1722976006941" duration="322000" />
+      <workItem from="1723038251101" duration="1474000" />
+      <workItem from="1723049328847" duration="3544000" />
+      <workItem from="1723112588526" duration="12554000" />
+      <workItem from="1723136053439" duration="42000" />
+      <workItem from="1723306342346" duration="599000" />
+      <workItem from="1723309227317" duration="2946000" />
+      <workItem from="1723362341644" duration="600000" />
+      <workItem from="1723364644274" duration="3444000" />
+      <workItem from="1723385560754" duration="12185000" />
+      <workItem from="1723408302455" duration="705000" />
+      <workItem from="1723458166735" duration="912000" />
+      <workItem from="1723459217034" duration="11000" />
+      <workItem from="1723488987942" duration="6625000" />
+      <workItem from="1723524249914" duration="69000" />
+      <workItem from="1723546542784" duration="1073000" />
     </task>
     <servers />
   </component>
@@ -1363,7 +1388,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/dp/src/KnapSack.java</url>
-          <line>57</line>
+          <line>60</line>
           <properties class="KnapSack" method="isSubsetSum">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -1459,6 +1484,96 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="281" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/graph/Main.java</url>
+          <line>1621</line>
+          <properties class="graph.Main" method="calcEquation">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="282" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/strings/StringQues.java</url>
+          <line>529</line>
+          <properties class="strings.StringQues" method="isIsomorphic">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="283" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/strings/StringQues.java</url>
+          <line>546</line>
+          <properties class="strings.StringQues" method="kthDistinct">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="284" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/array/ArrayLC.java</url>
+          <line>495</line>
+          <properties class="array.ArrayLC" method="convertIndexToArray">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="286" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/miscellaneous/src/HuffmanCoding.java</url>
+          <line>88</line>
+          <properties class="HuffmanCoding" method="decode">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="287" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/dp/Main.java</url>
+          <line>22</line>
+          <properties class="dp.Main" method="generate">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="288" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/dp/Main.java</url>
+          <line>50</line>
+          <properties class="dp.Main" method="coinChange">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/dp/Main.java</url>
+          <line>72</line>
+          <properties class="dp.Main" method="change">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="290" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/dp/Main.java</url>
+          <line>112</line>
+          <properties class="dp.Main" method="longestCommonSubstring">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Leetcode/src/array/KthLargest.java</url>
+          <line>18</line>
+          <properties class="array.KthLargest" method="add">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="293" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Leetcode/src/LL/LL.java</url>
