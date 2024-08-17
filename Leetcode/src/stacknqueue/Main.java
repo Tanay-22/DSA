@@ -43,7 +43,8 @@ public class Main
                 open++;
                 if (open > 1)
                     sb.append('(');
-            } else
+            }
+            else
             {
                 if (open > 1)
                     sb.append(')');
@@ -130,7 +131,8 @@ public class Main
                 while (num-- > 0)
                     sub.append(str);
                 stack.push(sub.toString());
-            } else
+            }
+            else
                 stack.push("" + s.charAt(i));
         }
         while (!stack.isEmpty())
@@ -160,7 +162,8 @@ public class Main
                     stack.pop();
                     i--;
                 }
-            } else
+            }
+            else
                 stack.push(asteroids[i]);
         }
         int arr[] = new int[stack.size()];
@@ -200,7 +203,8 @@ public class Main
             {
                 count += 2;
                 stack.pop();
-            } else
+            }
+            else
             {
                 if (maxCount < count)
                     maxCount = count;
@@ -337,7 +341,8 @@ public class Main
                 stack.pop();
                 int ans = calculateHelper(list);
                 stack.push("" + ans);
-            } else
+            }
+            else
                 stack.push(t);
         }
         List<String> rem = new ArrayList<>();
@@ -360,7 +365,8 @@ public class Main
                 else
                     isAdd = true;
 
-            } else
+            }
+            else
             {
                 if (isAdd)
                     ans += Integer.parseInt(s);
@@ -447,7 +453,8 @@ public class Main
                         break;
                 }
                 stack.push(String.valueOf(res));
-            } else
+            }
+            else
                 stack.push(tokens[i]);
         }
         return Integer.parseInt(stack.pop());
@@ -485,7 +492,8 @@ public class Main
                     sb.append(stack.pop());
                 stack.pop();
                 stack.push(sb.reverse().toString());
-            } else
+            }
+            else
                 stack.push("" + ch);
         }
         StringBuilder res = new StringBuilder();
@@ -552,12 +560,12 @@ public class Main
         Stack<String> stack = new Stack<>();
         for (int i = 0; i < logs.length; i++)
         {
-            if(logs[i].equals("../"))
+            if (logs[i].equals("../"))
             {
-                if(!stack.isEmpty())
+                if (!stack.isEmpty())
                     stack.pop();
             }
-            else if(logs[i].equals("./"))
+            else if (logs[i].equals("./"))
                 continue;
             else
                 stack.push(logs[i]);
@@ -571,7 +579,7 @@ public class Main
         int st = 0, ct = 0, tat = 0;
         double wtSum = 0;
 
-        for (int[] task: customers)
+        for (int[] task : customers)
         {
             st = ct > task[0] ? ct : task[0];
             ct = st + task[1];
@@ -580,11 +588,31 @@ public class Main
         return 1.0 * wtSum / customers.length;
     }
 
+
+    public static boolean find132pattern(int[] nums)
+    {
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (stack.isEmpty())
+            {
+                stack.push(nums[i]);
+                continue;
+            }
+            if (stack.peek() > nums[i])
+            {
+                stack.push(nums[i++]);
+                if(i < nums.length && stack.peek() < nums[i])
+                    return true;
+            }
+            stack.push(nums[i]);
+        }
+        return false;
+    }
+
     public static void main(String[] args)
     {
-        String str = "(ed(et(oc))el)";
-        int arr[][] ={{1,2},{2,5},{4,3}};
-
-        System.out.println(averageWaitingTime(arr));
+        int[] arr = {-1,3,2,0};
+        System.out.println(find132pattern(arr));
     }
 }

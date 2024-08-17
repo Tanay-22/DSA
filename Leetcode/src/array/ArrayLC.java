@@ -503,14 +503,48 @@ public class ArrayLC
         return arr;
     }
 
+    //  1314. Matrix Block Sum
+    public static int[][] matrixBlockSum(int[][] mat, int k)
+    {
+        int m = mat.length, n = mat[0].length;
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 1; j < n; j++)
+                mat[i][j] += mat[i][j-1];
+        }
+        for (int i = 1; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+                mat[i][j] += mat[i-1][j];
+        }
+        int[][] ans = new int[m][n];
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                int endRow = Math.min(m - 1, i + k);
+                int endCol = Math.min(n - 1, j + k);
+
+                int sum = mat[endRow][endCol];
+                int n1 = (j - k - 1 >= 0) ? mat[endRow][j - k - 1] : 0;
+                int n2 = (i - k - 1 >= 0) ? mat[i - k - 1][endCol] : 0;
+                int n3 = (j - k - 1 >= 0 && i - k - 1 >= 0) ? mat[i - k - 1][j - k - 1] : 0;
+
+                ans[i][j] = sum - n1 - n2 + n3;
+            }
+        }
+        return ans;
+    }
+
 
     public static void main(String[] args)
     {
-        KthLargest kthLargest = new KthLargest(3, new int[]{4, 5, 8, 2});
-        System.out.println(kthLargest.add(3));   // return 4
-        System.out.println(kthLargest.add(5));   // return 5
-        System.out.println(kthLargest.add(10));  // return 5
-        System.out.println(kthLargest.add(9));   // return 8
-        System.out.println(kthLargest.add(4));   // return 8
+        int[][] mat = {{1,2,3},{4,5,6},{7,8,9}};
+        Arrays.stream(matrixBlockSum(mat, 1)).forEach(arr ->
+        {
+            for (int i = 0; i < arr.length; i++)
+                System.out.print(arr[i] + " ");
+            System.out.println();
+        });
     }
 }
