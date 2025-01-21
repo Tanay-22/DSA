@@ -110,7 +110,7 @@ public class KnapSack
     }
 
     // Minimum Subset Sum Difference
-    public static int minSubsetSumDiff(int N, int arr[])
+    public static int minSubsetSumDiff(int N, int[] arr)
     {
         int sum = Arrays.stream(arr).sum();
         boolean[][] dp = new boolean[N + 1][sum + 1];

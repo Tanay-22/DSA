@@ -635,7 +635,7 @@ public class Main
         return dp[n] = (countWays(n-1, dp, MOD) + countWays(n-2, dp, MOD) + countWays(n-3, dp, MOD)) % MOD;
     }
 
-
+//  https://www.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1
     public static int minOperations(String text1, String text2)
     {
 //        return text1.length() + text2.length() - 2 * minOperations(text1, text2, 0, 0);
@@ -666,8 +666,272 @@ public class Main
         return Math.max(minOperations(text1, text2, i+1, j), minOperations(text1, text2, i, j+1));
     }*/
 
+    //  https://www.geeksforgeeks.org/problems/edit-distance3702/1
+    public static int editDistance(String str1, String str2)
+    {
+        int l1 = str1.length(), l2 = str2.length();
+        int[][] dp = new int[l1+1][l2+1];
+
+        for(int i = 1; i <= l1; i++)
+        {
+            for(int j = 1; j <= l2; j++)
+            {
+                if(str1.charAt(i-1) == str2.charAt(j-1))
+                    dp[i][j] = dp[i-1][j-1];
+                else
+                    dp[i][j] = 1 + Math.min(dp[i-1][j-1], Math.min(dp[i][j-1], dp[i-1][j]));
+            }
+        }
+        return dp[l1][l2];
+
+    }
+
+    //  https://www.geeksforgeeks.org/problems/longest-path-in-a-matrix3019/1
+    public static int longestIncreasingPath(int[][] matrix)
+    {
+        int m = matrix.length, n = matrix[0].length;
+        int[][] directions = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+        int[][] dp = new int[m][n];
+        int maxPath = 0;
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+                maxPath = Math.max(maxPath, dfs(matrix, i, j, directions, dp));
+        }
+        return maxPath;
+    }
+    private static int dfs(int[][] matrix, int i, int j, int[][] directions, int[][] dp)
+    {
+        if(dp[i][j] != 0)
+            return dp[i][j];
+
+        int res = 1;
+        for(int[] direction: directions)
+        {
+            int nI = i + direction[0];
+            int nJ = j + direction[1];
+
+            if(nI >= 0 && nI < matrix.length && nJ >= 0 && nJ < matrix[0].length && matrix[nI][nJ] > matrix[i][j])
+                res = Math.max(res, 1 + dfs(matrix, nI, nJ, directions, dp));
+        }
+        return dp[i][j] = res;
+    }
+
+
+    //  https://www.geeksforgeeks.org/problems/optimal-strategy-for-a-game-1587115620/1
+    public static long maximumAmount(int arr[], int n)
+    {
+//        Map<String, Long> map = new HashMap<>();
+//          return maximumAmount(arr, 0, arr.length - 1, map);
+        long[][] dp = new long[n][n];
+        for (int length = 1; length <= n; length++)
+        {
+            for (int start = 0; start + length - 1 < n; start++)
+            {
+                int end = start + length - 1;
+
+                long pickStart = arr[start];
+
+                if (start + 2 <= end)
+                    pickStart += Math.min(dp[start + 2][end], dp[start + 1][end - 1]);
+
+                else if (start + 1 <= end)
+                    pickStart += dp[start + 1][end - 1];
+
+
+                long pickEnd = arr[end];
+
+                if (start + 1 <= end - 2)
+                    pickEnd += Math.min(dp[start + 1][end - 1], dp[start][end - 2]);
+
+                else if (start + 1 <= end - 1)
+                    pickEnd += dp[start + 1][end - 1];
+
+                dp[start][end] = Math.max(pickStart, pickEnd);
+            }
+        }
+        return dp[0][n-1];
+    }
+    /*private static long maximumAmount(int arr[], int start, int end, Map<String, Long> map)
+    {
+        if(start > end)
+            return 0;
+
+        String key = start + " " + end;
+        if(map.containsKey(key))
+            return map.get(key);
+
+        long pickStart = arr[start] + Math.min(maximumAmount(arr, start+1, end-1, map),
+                maximumAmount(arr, start+2, end, map));
+
+        long pickEnd = arr[end] + Math.min(maximumAmount(arr, start+1, end-1, map),
+                maximumAmount(arr, start, end-2, map));
+
+        long res = Math.max(pickStart, pickEnd);
+        map.put(key, res);
+        return res;
+    }*/
+
+    //  264. Ugly Number II
+    public static int nthUglyNumber(int n)
+    {
+        PriorityQueue<Long> pq = new PriorityQueue<>();
+        Set<Long> set = new HashSet<>();
+        int[] arr = {2, 3, 5};
+        pq.offer(1L);
+        set.add(1L);
+
+        long current = 0;
+        for (int i = 0; i < n; i++)
+        {
+            current = pq.poll();
+
+            for(int num: arr)
+            {
+                if(!set.contains(num * current))
+                {
+                    pq.offer(num * current);
+                    set.add(num * current);
+                }
+            }
+        }
+        return (int)current;
+    }
+
+    //  5. Longest Palindromic Substring
+    public static String longestPalindrome(String s)
+    {
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
+        int maxLen = 0;
+
+        int i = 0, j = 0;
+        for (int len = 1; len <= n; len++)
+        {
+            for (int start = 0; start + len - 1 < n; start++)
+            {
+                int end = start + len - 1;
+                if (s.charAt(start) == s.charAt(end) && (end - start <= 2 ||
+                        dp[start + 1][end - 1]))
+                {
+                    dp[start][end] = true;
+                    i = start;
+                    j = end;
+                }
+
+            }
+        }
+        return s.substring(i, j+1);
+    }
+
+
+    public static int jump(int[] nums)
+    {
+        int[] dp = new int[nums.length];
+        return jump(nums, 0, dp);
+    }
+    private static int jump(int[] nums, int n, int[] dp)
+    {
+        if(n >= nums.length-1)
+            return 0;
+
+        if(dp[n] != 0)
+            return dp[n];
+
+        int res = (int)1e9;
+        for(int i = 1; i <= nums[n]; i++)
+        {
+            res = Math.min(res, jump(nums, n+i, dp));
+        }
+        return dp[n] = res + 1;
+    }
+
+
+    public int minPathSum(int[][] grid)
+    {
+        int m = grid.length, n = grid[0].length;
+        return minPathSum(grid, m-1, n-1);
+    }
+    private int minPathSum(int[][] arr, int i, int j)
+    {
+        if(i == 0 && j == 0)
+            return arr[0][0];
+
+        if(i < 0 || j < 0)
+            return 0;
+
+        return arr[i][j] + Math.min(minPathSum(arr, i-1, j), minPathSum(arr, i, j-1));
+    }
+
+
+    public int minimumTotal(List<List<Integer>> triangle)
+    {
+        return helper(triangle, 0, 0);
+    }
+    private int helper(List<List<Integer>> list, int i, int j)
+    {
+        if(i == list.size())
+            return 0;
+
+        if(j < 0 || j >= list.get(i).size())
+            return (int)1e9;
+
+        int value = list.get(i).get(j);
+        int res = Math.min(value + helper(list, i+1, j),
+                value + helper(list, i+1, j+1));
+
+        return res;
+
+    }
+
+    //  140. Word Break II
+    public List<String> wordBreak(String s, List<String> wordDict)
+    {
+        Set<String> set = new HashSet<>(wordDict);
+        Map<String, List<String>> map = new HashMap<>();
+
+        for(String str: wordDict)
+            set.add(str);
+
+        return helper(s, set, map);
+    }
+
+    private List<String> helper(String s, Set<String> set, Map<String, List<String>> map)
+    {
+
+        if(map.containsKey(s))
+            return map.get(s);
+
+        List<String> res = new ArrayList<>();
+
+        if(s.isEmpty())
+        {
+            res.add("");
+            return res;
+        }
+
+        for(int i = 1; i <= s.length(); i++)
+        {
+            String first = s.substring(0, i);
+            if(set.contains(first))
+            {
+                List<String> sublist = helper(s.substring(i), set, map);
+                for (String str: sublist)
+                    res.add(first + (str.isEmpty() ? "" : " ") + str);
+            }
+        }
+        map.put(s, res);
+        return map.get(s);
+    }
+
     public static void main(String[] args)
     {
-        System.out.println(minOperations("heap", "pea"));
+        String s = "pineapplepenapple";
+        List<String> wordDict = new ArrayList<>(Arrays.asList(
+                new String[]{"apple","pen"}
+        ));
+        Main main = new Main();
+        System.out.println(main.wordBreak(s, wordDict));
     }
 }

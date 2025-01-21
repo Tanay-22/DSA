@@ -537,14 +537,85 @@ public class ArrayLC
     }
 
 
+    public static int longestConsecutive(int[] nums)
+    {
+        int n = nums.length;
+        if(n == 0)
+            return 0;
+        int min = nums[0];
+        int max = nums[0];
+        Set<Integer> set = new HashSet<>();
+        set.add(nums[0]);
+        for(int i = 1; i < n; i++)
+        {
+            set.add(nums[i]);
+            min = Math.min(min, nums[i]);
+            max = Math.max(max, nums[i]);
+        }
+        int count = 0, maxCount = 0;
+        for(int i = min; i <= max; i++)
+        {
+            if(set.contains(i))
+                count++;
+            else
+            {
+                maxCount = Math.max(count, maxCount);
+                count = 0;
+            }
+        }
+        return maxCount = Math.max(count, maxCount);
+    }
+
+
+    public static int robotSim(int[] commands, int[][] obstacles)
+    {
+        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        // n, e, s, w acc. to x-y axis
+        Set<String> obs = new HashSet<>();
+
+        for (int[] obstacle : obstacles)
+            obs.add(obstacle[0] + " " + obstacle[1]);
+
+        int dir= 0;
+        int x = 0, y = 0;
+        int max = 0;
+        for(int command: commands)
+        {
+            if(command == -1)
+            {
+                dir = (dir + 1) % 4;
+            }
+            else if(command == -2)
+            {
+                dir = (dir + 3) % 4;
+            }
+            else
+            {
+                for(int i = 1; i <= command; i++)
+                {
+                    int xx = x + directions[dir][0];
+                    int yy = y + directions[dir][1];
+
+                    if(obs.contains(xx + " " + yy))
+                        break;
+                    else
+                    {
+                        x = xx;
+                        y = yy;
+                        max = Math.max(max, x*x + y*y);
+                    }
+                    max = Math.max(max, x*x + y*y);
+                }
+            }
+        }
+        return max;
+    }
+
+
     public static void main(String[] args)
     {
-        int[][] mat = {{1,2,3},{4,5,6},{7,8,9}};
-        Arrays.stream(matrixBlockSum(mat, 1)).forEach(arr ->
-        {
-            for (int i = 0; i < arr.length; i++)
-                System.out.print(arr[i] + " ");
-            System.out.println();
-        });
+        int commands[] = {4,-1,4,-2,4}, obstacles[][] = {{2,4}};
+
+        System.out.println(robotSim(commands, obstacles));
     }
 }

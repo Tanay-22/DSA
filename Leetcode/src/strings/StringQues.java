@@ -561,6 +561,36 @@ public class StringQues
         return k > list.size() ? "" : list.toArray()[k-1].toString();
     }
 
+    public static List<String> removeSubfolders(String[] folder)
+    {
+        Arrays.sort(folder);
+
+        // return Arrays.asList(folder);
+        Set<String> set = new HashSet<>();
+
+        for(String s: folder)
+        {
+            String[] path = s.split("/");
+            String p = "";
+            boolean f = true;
+            for(int i = 0; i < path.length; i++)
+            {
+                if(path[i].isEmpty())
+                    continue;
+
+                p += "/" + path[i];
+                if(set.contains(p))
+                {
+                    f = false;
+                    break;
+                }
+            }
+            if(f)
+                set.add(s);
+        }
+        return new ArrayList<>(set);
+    }
+
     //  3016. Minimum Number of Pushes to Type Word II
     public static int minimumPushes(String word)
     {
@@ -591,10 +621,42 @@ public class StringQues
         return ans;
     }
 
+
+    public static boolean canMakeSubsequence(String str1, String str2)
+    {
+        int len1 = str1.length();
+        int len2 = str2.length();
+
+        if(len1 < len2)
+            return false;
+
+        return helper(str1, str2, 0, 0, 1);
+    }
+
+    private static boolean helper(String s1, String s2, int i, int j, int operationsLeft)
+    {
+        if(j == s2.length())
+            return true;
+
+        if(i == s1.length())
+            return false;
+
+        if(operationsLeft == 0 && s1.charAt(i) != s2.charAt(j))
+            return false;
+
+        if(operationsLeft > 0 &&
+                (s1.charAt(i) == s2.charAt(j) ||
+                        Math.abs(s1.charAt(i) - s2.charAt(j)) == 1 ||
+                        (s1.charAt(i) == 'z' && s2.charAt(j) == 'a')))
+            return helper(s1, s2, i + 1, j + 1,
+                    s1.charAt(i) == s2.charAt(j) ? operationsLeft : 0);
+
+        else
+            return helper(s1, s2, i + 1, j, operationsLeft);
+    }
+
     public static void main(String[] args)
     {
-        String word = "aabbccddeeffgghhiiiiii";
-        int k = 2;
-        System.out.println(minimumPushes(word));
+        System.out.println(canMakeSubsequence("zc", "ad"));
     }
 }

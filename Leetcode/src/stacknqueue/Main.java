@@ -610,9 +610,118 @@ public class Main
         return false;
     }
 
+    // 1106. Parsing A Boolean Expression (HARD)
+    public static boolean parseBoolExpr(String expression)
+    {
+        Stack<Character> stack = new Stack<>();
+        for(int i = 0; i < expression.length(); i++)
+        {
+            char ch = expression.charAt(i);
+            if(ch == ',')
+                continue;
+
+            stack.push(ch);
+            if(ch == ')')
+            {
+                stack.pop();
+                boolean trueP = false, falseP = false;
+                while(stack.peek() != '(')
+                {
+                    char c = stack.pop();
+                    if(c == 'f')
+                    {
+                        falseP = true;
+                    }
+                    else if(c == 't')
+                    {
+                        trueP = true;
+                    }
+                }
+                stack.pop();
+                char res = '\0';
+                if(stack.peek() == '|')
+                {
+                    if(trueP)
+                        res = 't';
+                    else
+                        res = 'f';
+                }
+                else if(stack.peek() == '&')
+                {
+                    if(falseP)
+                        res = 'f';
+                    else
+                        res = 't';
+                }
+                else if(stack.peek() == '!')
+                {
+                    if(trueP)
+                        res = 'f';
+                    else
+                        res = 't';
+                }
+                stack.pop();
+                stack.push(res);
+            }
+        }
+        return stack.pop() == 't';
+    }
+
+    //  85. Maximal Rectangle
+    public static int maximalRectangle(char[][] matrix)
+    {
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int maxArea = 0;
+        int[] height = new int[n + 1];
+        for(int i = 0; i < m; i++)
+        {
+            for(int j = 0; j < n; j++)
+            {
+                if(matrix[i][j] == '1')
+                    height[j]++;
+                else
+                    height[j] = 0;
+            }
+            Stack<Integer> stack = new Stack<>();
+            for(int j = 0; j <= n; j++)
+            {
+                if(!stack.isEmpty() && height[j] < height[stack.peek()])
+                {
+                    int h = height[stack.pop()];
+                    int w = stack.isEmpty() ? j : j - stack.pop() - 1;
+                    maxArea = Math.max(maxArea, h * w);
+                }
+                stack.push(j);
+            }
+        }
+        return maxArea;
+
+    }
+
     public static void main(String[] args)
     {
-        int[] arr = {-1,3,2,0};
-        System.out.println(find132pattern(arr));
+        char[][] matrix = {
+                {'1', '0', '1', '0', '0'},
+                {'1', '0', '1', '1', '1'},
+                {'1', '1', '1', '1', '1'},
+                {'1', '0', '0', '1', '0'}
+        };
+
+//        System.out.println(maximalRectangle(matrix));
+
+        LRUCacheWithLinkedHashMap lRUCache = new LRUCacheWithLinkedHashMap(2);
+        lRUCache.put(1, 1); // cache is {1=1}
+        lRUCache.put(2, 2); // cache is {1=1, 2=2}
+        lRUCache.get(1);    // return 1
+        lRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
+        lRUCache.get(2);    // returns -1 (not found)
+        lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
+        lRUCache.get(1);    // return -1 (not found)
+        lRUCache.get(3);    // return 3
+        lRUCache.get(4);    // return 4
     }
+
+
 }

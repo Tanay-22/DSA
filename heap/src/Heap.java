@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.List;
+
 // min Heap
 public class Heap<T extends Comparable<T>>
 {
-    private ArrayList<T> list;
+    private final List<T> list;
 
     public Heap()
     {

@@ -904,15 +904,124 @@ public class Main
     }
 
 
+    public static List<List<Integer>> pathSum2(TreeNode root, int targetSum)
+    {
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+
+        pathSum2(root, targetSum, ans, list, 0);
+
+        return ans;
+    }
+    private static void pathSum2(TreeNode root, int targetSum, List<List<Integer>> ans,
+                         List<Integer> list, int sum)
+    {
+        if(root == null)
+            return;
+
+        list.add(root.val);
+        sum += root.val;
+
+        if(root.left == null && root.right == null && sum == targetSum)
+        {
+            ans.add(new ArrayList<>(list));
+            list.remove(list.size()-1);
+            sum -= root.val;
+
+            return;
+        }
+        pathSum2(root.left, targetSum, ans, list, sum);
+        pathSum2(root.right, targetSum, ans, list, sum);
+
+        list.remove(list.size()-1);
+        sum -= root.val;
+    }
+
+    //  1104. Path In Zigzag Labelled Binary Tree
+    public static List<Integer> pathInZigZagTree(int label)
+    {
+        int maxLevel = (int)(Math.log(label) / Math.log(2));
+
+        TreeNode root = generateTree(maxLevel);
+        bfs(root);
+
+        List<Integer> list = new ArrayList<>();
+        getPath(root, list, label);
+
+        return list;
+    }
+    static int a = 1;
+    private static TreeNode generateTree(int maxLevel)
+    {
+        if(maxLevel < 0)
+            return null;
+
+        TreeNode root = new TreeNode(a++);
+        root.left = generateTree(maxLevel-1);
+        root.right = generateTree(maxLevel-1);
+        return root;
+    }
+    private static void bfs(TreeNode root)
+    {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        boolean fromFront = true;
+        while (!queue.isEmpty())
+        {
+            int levelSize = queue.size();
+            int n;
+            if(fromFront)
+                n = levelSize;
+            else
+                n = levelSize * 2 - 1;
+
+            for (int i = 0; i < levelSize; i++)
+            {
+                TreeNode currentNode = queue.poll();;
+
+                if(fromFront)
+                {
+                    currentNode.val = n++;
+                }
+                else
+                {
+                    currentNode.val = n--;
+                }
+
+                if(currentNode.left != null)
+                    queue.offer(currentNode.left);
+                if(currentNode.right != null)
+                    queue.offer(currentNode.right);
+            }
+            fromFront = !fromFront;
+        }
+        displayTree(root);
+    }
+    private static boolean getPath(TreeNode root, List<Integer> list, int destination)
+    {
+        if(root == null)
+            return false;
+
+        list.add(root.val);
+
+        if(root.val == destination)
+            return true;
+
+        if(getPath(root.left, list, destination) || getPath(root.right, list, destination))
+            return true;
+
+        list.remove(list.size()-1);
+
+        return false;
+    }
 
 
     public static void main(String[] args)
     {
-        Integer arr[] = {1,2,null,3} , arr2[] ={1,null,2,null,3};
-        TreeNode root1 = createTree(arr);
-        TreeNode root2 = createTree(arr2);
-
-        displayTree(mergeTrees(root1, root2));
+        TreeAncestor treeAncestor = new TreeAncestor(7, new int[]{-1, 0, 0, 1, 1, 2, 2});
+        System.out.println(treeAncestor.getKthAncestor(3, 1)); // returns 1 which is the parent of 3
+        System.out.println(treeAncestor.getKthAncestor(5, 2)); // returns 0 which is the grandparent of 5
+        System.out.println(treeAncestor.getKthAncestor(6, 3)); // returns -1 because there is no such ancestor
     }
 
     public static TreeNode createTree(Integer values[])
