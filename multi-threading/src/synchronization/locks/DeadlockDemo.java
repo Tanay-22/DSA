@@ -63,7 +63,14 @@ class Task2 implements Runnable
     @Override
     public void run()
     {
-        paper.writeWithPaperAndPen(pen); // thread2 locks paper and tries to lock pen
+//        paper.writeWithPaperAndPen(pen); // thread2 locks paper and tries to lock
+
+        // how to avoid deadlock - consistent ordering
+        // let task1 write first
+        synchronized (pen)
+        {
+            paper.writeWithPaperAndPen(pen);
+        }
     }
 }
 public class DeadlockDemo

@@ -5,24 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c42423ee-3d32-4a0d-bddf-365dfa076cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Leetcode/src/design/UndergroundSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/Counter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/MyThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/locks/BankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/locks/DeadlockDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/locks/FairnessLockDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/locks/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/locks/ReadWriteCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/locks/ReentrantDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/synchronization.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multi-threading/src/LambdaExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/multi-threading/src/ThreadCommunication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leetcode/src/design/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leetcode/src/design/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multi-threading/src/threadMehtods/ThreadMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/multi-threading/src/threadMehtods/ThreadMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multi-threading/src/threadMehtods/methods.md" beforeDir="false" afterPath="$PROJECT_DIR$/multi-threading/src/threadMehtods/methods.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/design/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/design/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Leetcode/stacknqueue/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/stacknqueue/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/multi-threading/threadMehtods/ThreadMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/multi-threading/threadMehtods/ThreadMethods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multi-threading/src/synchronization/locks/DeadlockDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/multi-threading/src/synchronization/locks/DeadlockDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/multi-threading/synchronization/locks/ReadWriteCounter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/multi-threading/synchronization/locks/ReadWriteCounter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/multi-threading/synchronization/locks/ReadWriteCounter$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/multi-threading/synchronization/locks/ReadWriteCounter$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/multi-threading/synchronization/locks/ReadWriteCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/multi-threading/synchronization/locks/ReadWriteCounter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,69 +60,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.AVL.executor": "Run",
-    "Application.ArrayLC.executor": "Run",
-    "Application.Backtracking.executor": "Run",
-    "Application.BasicCalculator2.executor": "Run",
-    "Application.CountSort.executor": "Run",
-    "Application.DifferentWaysToAddParentheses.executor": "Run",
-    "Application.EggDropping.executor": "Run",
-    "Application.EnumMapDemo.executor": "Run",
-    "Application.EqualSumPartition.executor": "Run",
-    "Application.FairnessLockDemo.executor": "Run",
-    "Application.GeneralSyntax.executor": "Run",
-    "Application.Graph.executor": "Debug",
-    "Application.HashTableDemo.executor": "Run",
-    "Application.IdentityHashMapDemo.executor": "Run",
-    "Application.KnapSack.executor": "Run",
-    "Application.LL.executor": "Run",
-    "Application.LearnList.executor": "Run",
-    "Application.Mai2.executor": "Run",
-    "Application.Main.executor": "Debug",
-    "Application.MathQues.executor": "Debug",
-    "Application.MyThread.executor": "Run",
-    "Application.QuickSort.executor": "Run",
-    "Application.ReadWriteCounter.executor": "Run",
-    "Application.ReentrantDemo.executor": "Run",
-    "Application.Search.executor": "Run",
-    "Application.SortedMapDemo.executor": "Run",
-    "Application.StringQues.executor": "Debug",
-    "Application.Test.executor": "Run",
-    "Application.ThreadMethods.executor": "Run",
-    "Application.TrueBooleanParenthesization.executor": "Run",
-    "Application.UnFairLockDemo.executor": "Run",
-    "Application.com.tanay.Main.executor": "Run",
-    "Application.dp.Main.executor": "Run",
-    "Application.graph.Main.executor": "Run",
-    "Application.heaps.Main.executor": "Run",
-    "Application.slidingWindow.Main.executor": "Debug",
-    "Application.stacknqueue.Main.executor": "Debug",
-    "Application.strings.Main.executor": "Run",
-    "Application.synchronization.Test.executor": "Run",
-    "Application.synchronization.locks.Main.executor": "Run",
-    "Application.trees.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "20",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/DSA/untitled",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.AVL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ArrayLC.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Backtracking.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BasicCalculator2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CountSort.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DeadlockDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DifferentWaysToAddParentheses.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EggDropping.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EnumMapDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EqualSumPartition.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FairnessLockDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GeneralSyntax.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Graph.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.HashTableDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IdentityHashMapDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.KnapSack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LearnList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Mai2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.MathQues.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.MyThread.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QuickSort.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ReadWriteCounter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ReentrantDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Search.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SortedMapDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StringQues.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThreadCommunication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ThreadMethods.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TrueBooleanParenthesization.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UnFairLockDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.com.tanay.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.dp.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.graph.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.heaps.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.slidingWindow.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.stacknqueue.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.strings.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.synchronization.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.synchronization.locks.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.trees.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DSA/untitled&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\DSA\untitled" />
@@ -149,9 +140,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ReadWriteCounter">
-    <configuration name="FairnessLockDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="synchronization.locks.FairnessLockDemo" />
+  <component name="RunManager" selected="Application.ThreadCommunication">
+    <configuration name="DeadlockDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="synchronization.locks.DeadlockDemo" />
       <module name="multi-threading" />
       <extension name="coverage">
         <pattern>
@@ -163,12 +154,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="design.Main" />
-      <module name="Leetcode" />
+    <configuration name="FairnessLockDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="synchronization.locks.FairnessLockDemo" />
+      <module name="multi-threading" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="design.*" />
+          <option name="PATTERN" value="synchronization.locks.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -202,26 +193,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="synchronization.locks.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="synchronization.locks.Main" />
+    <configuration name="ThreadCommunication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThreadCommunication" />
       <module name="multi-threading" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="synchronization.locks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ThreadCommunication" />
+        <item itemvalue="Application.DeadlockDemo" />
         <item itemvalue="Application.ReadWriteCounter" />
         <item itemvalue="Application.FairnessLockDemo" />
         <item itemvalue="Application.ReentrantDemo" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.synchronization.locks.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -465,7 +450,8 @@
       <workItem from="1737535702991" duration="1329000" />
       <workItem from="1737661650321" duration="4844000" />
       <workItem from="1737795892300" duration="280000" />
-      <workItem from="1737797046980" duration="5543000" />
+      <workItem from="1737797046980" duration="7959000" />
+      <workItem from="1737889345115" duration="1231000" />
     </task>
     <servers />
   </component>
