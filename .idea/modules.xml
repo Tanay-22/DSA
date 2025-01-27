@@ -19,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/dp/dp.iml" filepath="$PROJECT_DIR$/dp/dp.iml" />
       <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
       <module fileurl="file://$PROJECT_DIR$/heap/heap.iml" filepath="$PROJECT_DIR$/heap/heap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaStreams/javaStreams.iml" filepath="$PROJECT_DIR$/javaStreams/javaStreams.iml" />
       <module fileurl="file://$PROJECT_DIR$/multi-threading/multi-threading.iml" filepath="$PROJECT_DIR$/multi-threading/multi-threading.iml" />
     </modules>
   </component>
