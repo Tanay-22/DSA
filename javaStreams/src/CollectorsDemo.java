@@ -35,6 +35,28 @@ public class CollectorsDemo
             "Max: " + intSummaryStatistics.getMax() + "\n" +
             "Average: " + intSummaryStatistics.getAverage()
         );
-        
+
+        // 6. Calculating Average
+        Double average = numbers.stream().collect(Collectors.averagingInt(x -> x));
+        System.out.println("Average: " + average);
+
+        // 7. Couting Elements
+        Long count = numbers.stream().collect(Collectors.counting());
+        System.out.println("Count: " + count);
+
+        // 8. Grouping Elements
+        List<String> words = Arrays.asList("hello", "world", " java", "streams", "collecting");
+        System.out.println(words.stream().collect(Collectors.groupingBy(String::length)));
+        System.out.println(words.stream().collect(Collectors.groupingBy(String::length, Collectors.joining(","))));
+        System.out.println(words.stream().collect(Collectors.groupingBy(String::length, Collectors.counting())));
+        TreeMap<Integer, Long> treeMap = words.stream().collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.counting()));
+        System.out.println(treeMap);
+
+        // 9. Partitioning
+        System.out.println(words.stream().collect(Collectors.partitioningBy(x -> x.length() > 5)));
+
+        // 10. Mapping and Collecting --> Applies mapping before collecting
+        System.out.println(words.stream().collect(Collectors.mapping(x -> x.toUpperCase(), Collectors.toList())));
+
     }
 }

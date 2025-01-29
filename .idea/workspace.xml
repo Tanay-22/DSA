@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c42423ee-3d32-4a0d-bddf-365dfa076cd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/javaStreams/javaStreams.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/CollectorsDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/ConsumerDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/FunctionDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/IntermediateOps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/LazyEvaluationDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/MethodRefernce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/ParallelStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/PredicateDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/StreamDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javaStreams/src/TerminalOps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javaStreams/src/Example.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javaStreams/src/PrimitiveStreams.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaStreams/src/CollectorsDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaStreams/src/CollectorsDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaStreams/CollectorsDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaStreams/CollectorsDemo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +73,7 @@
     &quot;Application.EggDropping.executor&quot;: &quot;Run&quot;,
     &quot;Application.EnumMapDemo.executor&quot;: &quot;Run&quot;,
     &quot;Application.EqualSumPartition.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Example.executor&quot;: &quot;Run&quot;,
     &quot;Application.FairnessLockDemo.executor&quot;: &quot;Run&quot;,
     &quot;Application.FunctionDemo.executor&quot;: &quot;Run&quot;,
     &quot;Application.GeneralSyntax.executor&quot;: &quot;Run&quot;,
@@ -101,6 +94,7 @@
     &quot;Application.MyThread.executor&quot;: &quot;Run&quot;,
     &quot;Application.ParallelStream.executor&quot;: &quot;Run&quot;,
     &quot;Application.PredicateDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PrimitiveStreams.executor&quot;: &quot;Run&quot;,
     &quot;Application.QuickSort.executor&quot;: &quot;Run&quot;,
     &quot;Application.ReadWriteCounter.executor&quot;: &quot;Run&quot;,
     &quot;Application.ReentrantDemo.executor&quot;: &quot;Run&quot;,
@@ -159,9 +153,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TerminalOps">
+  <component name="RunManager" selected="Application.Example">
     <configuration name="CollectorsDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CollectorsDemo" />
+      <module name="javaStreams" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Example" />
       <module name="javaStreams" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,15 +175,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LazyEvaluationDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LazyEvaluationDemo" />
-      <module name="javaStreams" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParallelStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ParallelStream" />
+    <configuration name="PrimitiveStreams" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrimitiveStreams" />
       <module name="javaStreams" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TerminalOps" />
+        <item itemvalue="Application.Example" />
+        <item itemvalue="Application.PrimitiveStreams" />
         <item itemvalue="Application.CollectorsDemo" />
+        <item itemvalue="Application.TerminalOps" />
         <item itemvalue="Application.IntermediateOps" />
-        <item itemvalue="Application.ParallelStream" />
-        <item itemvalue="Application.LazyEvaluationDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -449,7 +443,9 @@
       <workItem from="1737889345115" duration="9036000" />
       <workItem from="1737903077234" duration="5639000" />
       <workItem from="1737981917670" duration="6966000" />
-      <workItem from="1738003929284" duration="1299000" />
+      <workItem from="1738003929284" duration="5764000" />
+      <workItem from="1738009844041" duration="1975000" />
+      <workItem from="1738138936736" duration="1745000" />
     </task>
     <servers />
   </component>
