@@ -1,0 +1,113 @@
+New York;18.2
+Los Angeles;22.5
+Chicago;16.0
+Houston;28.3
+Phoenix;34.7
+Philadelphia;19.6
+San Antonio;30.4
+San Diego;21.2
+Dallas;27.8
+San Jose;20.5
+Austin;29.1
+Jacksonville;26.3
+San Francisco;18.0
+Columbus;17.2
+Indianapolis;15.9
+Fort Worth;27.5
+Charlotte;23.1
+Seattle;14.3
+Denver;19.9
+Washington;20.8
+Boston;17.7
+El Paso;31.2
+Detroit;16.4
+Nashville;24.6
+Portland;13.5
+Memphis;25.0
+Oklahoma City;27.1
+Las Vegas;37.0
+Louisville;22.8
+Baltimore;20.3
+Milwaukee;14.7
+Albuquerque;27.4
+Tucson;32.5
+Fresno;35.1
+Sacramento;33.0
+Kansas City;21.6
+Atlanta;24.9
+Miami;29.7
+Omaha;20.2
+Raleigh;22.7
+Long Beach;21.1
+Virginia Beach;23.5
+Oakland;19.0
+Minneapolis;14.9
+Tulsa;25.7
+Arlington;28.9
+Tampa;27.2
+New Orleans;28.4
+Wichita;23.3
+Cleveland;16.8
+Bakersfield;36.5
+Aurora;18.6
+Anaheim;24.1
+Honolulu;30.8
+Santa Ana;22.0
+Riverside;26.9
+Corpus Christi;27.6
+Lexington;22.3
+Stockton;30.0
+Henderson;33.8
+Saint Paul;14.5
+St. Louis;24.2
+Cincinnati;19.4
+Pittsburgh;16.3
+Greensboro;21.7
+Anchorage;9.4
+Plano;27.3
+Lincoln;20.7
+Orlando;28.1
+Irvine;23.8
+Newark;18.9
+Durham;22.9
+Chula Vista;22.4
+Toledo;17.0
+Fort Wayne;16.2
+St. Petersburg;27.1
+Laredo;30.5
+Jersey City;19.8
+Chandler;34.0
+Madison;15.5
+Lubbock;26.4
+Scottsdale;35.3
+Reno;29.2
+Buffalo;14.1
+Gilbert;33.6
+Glendale;30.9
+North Las Vegas;36.0
+Winston-Salem;22.6
+Chesapeake;23.2
+Norfolk;24.7
+Fremont;20.0
+Garland;28.7
+Irving;29.0
+Hialeah;29.5
+Richmond;21.5
+Boise;19.1
+Spokane;15.2
+Baton Rouge;27.8
+Tacoma;14.0
+San Bernardino;31.4
+Modesto;32.7
+Fontana;30.3
+Des Moines;18.4
+Moreno Valley;27.9
+Santa Clarita;26.5
+Fayetteville;23.0
+Birmingham;24.3
+Oxnard;21.9
+Rochester;14.6
+Grand Rapids;16.7
+Huntsville;25.1
+Salt Lake City;20.9
+Tallahassee;26.8

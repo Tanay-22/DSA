@@ -21,6 +21,7 @@ public class Main
         }
         return res;
     }
+
     public static void main(String[] args) throws ExecutionException, InterruptedException
     {
         long startTime = System.currentTimeMillis();
@@ -52,6 +53,11 @@ public class Main
         }*/ // same could be achieved using executors framework
 
         ExecutorService executor = Executors.newFixedThreadPool(9);
+
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        // creates new threads as needed, but will reuse previously constructed threads when they are available
+        // for variable load or short-lived task
+
         /*for (int i = 1; i < 10; i++)
         {
             int finalI = i;
@@ -77,9 +83,12 @@ public class Main
         Future<?> future = executor.submit(callable);
         // stores the result of asynchronous computation. checks if the computation is complete, wait for its completion
         // and retrieves the result of the computation
-        if(future.isDone())
+        if (future.isDone())
             System.out.println("Task is dome !");
         System.out.println(future.get());
         executor.shutdown();
     }
 }
+
+
+

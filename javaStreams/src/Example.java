@@ -49,12 +49,23 @@ public class Example
 
     private static List<String> topKFrequentWords(List<String> list, int k)
     {
-        Map<String, Integer> map = list.stream().collect(Collectors.toMap(
+        /*Map<String, Integer> map = list.stream().collect(Collectors.toMap(
                 num -> num,
                 num -> 1,
                 Integer::sum
         ));
         return map.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .limit(k)
+                .map(Map.Entry::getKey)
+                .sorted()
+                .toList();*/
+
+        return list.stream().collect(Collectors.toMap(
+                        num -> num,
+                        num -> 1,
+                        Integer::sum
+                )).entrySet().stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
                 .limit(k)
                 .map(Map.Entry::getKey)
@@ -69,7 +80,7 @@ public class Example
                 .values().stream()
                 .filter(Optional::isPresent)
                 .map(Optional::get)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     private static List<Integer> findCommon(List<Integer> list1, List<Integer> list2)

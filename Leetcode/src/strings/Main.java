@@ -1,9 +1,6 @@
 package strings;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main
 {
@@ -93,6 +90,7 @@ public class Main
 //        // "practi" is the last min(10, 6) = 6 characters to the left of the cursor.
         Main main = new Main();
         String[] paths = {"root/a 1.txt(abcd) 2.txt(efsfgh)","root/c 3.txt(abdfcd)","root/c/d 4.txt(efggdfh)"};
-        System.out.println(main.findDuplicate(paths));
+//        System.out.println(main.findDuplicate(paths));
+
     }
 }

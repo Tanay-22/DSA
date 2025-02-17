@@ -83,9 +83,10 @@ public class Main2
             {
                 throw new RuntimeException(e);
             }
+            System.out.println("Hello");
             return 10;
         });
-        Integer i = null;
+        /*Integer i = null;
         try
         {
             i = future.get(1, TimeUnit.SECONDS);
@@ -95,7 +96,18 @@ public class Main2
         catch (InterruptedException | ExecutionException | TimeoutException e)
         {
             System.out.println("Exception occurred: " + e);
+        }*/
+        try
+        {
+            Thread.sleep(1000);
         }
+        catch (InterruptedException e)
+        {
+            System.out.println(e);
+        }
+        future.cancel(false); // true --> cancel; false --> cancel if not running
+        System.out.println(future.isCancelled());
+        System.out.println(future.isDone());
         executorService.shutdown();
     }
 }

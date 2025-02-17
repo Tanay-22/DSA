@@ -700,9 +700,68 @@ public class Main
 
     }
 
+
+    public static String infixToPostfix(String s)
+    {
+        Stack<Character> stack = new Stack<>();
+        StringBuilder sb = new StringBuilder();
+
+        for(char ch: s.toCharArray())
+        {
+            if(Character.isLetter(ch) || Character.isDigit(ch))
+                sb.append(ch);
+
+            else if(ch == '(')
+                stack.push(ch);
+
+            else if(ch == ')')
+            {
+                while(stack.peek() != '(')
+                {
+                    sb.append(stack.pop());
+                }
+                stack.pop();
+            }
+            else
+            {
+                while(!stack.isEmpty() &&
+                        getPrecedence(ch) <= getPrecedence(stack.peek()))
+                {
+                    sb.append(stack.pop());
+                }
+                stack.push(ch);
+            }
+        }
+        while(!stack.isEmpty())
+            sb.append(stack.pop());
+
+        return sb.toString();
+    }
+
+    private static int getPrecedence(char ch)
+    {
+        switch(ch)
+        {
+            case '+':
+            case '-':
+                return 1;
+
+            case '*':
+            case '/':
+                return 2;
+
+            case '^':
+                return 3;
+
+            default:
+                return -1;
+        }
+    }
+
+
     public static void main(String[] args)
     {
-        char[][] matrix = {
+        /*char[][] matrix = {
                 {'1', '0', '1', '0', '0'},
                 {'1', '0', '1', '1', '1'},
                 {'1', '1', '1', '1', '1'},
@@ -720,7 +779,9 @@ public class Main
         lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
         lRUCache.get(1);    // return -1 (not found)
         lRUCache.get(3);    // return 3
-        lRUCache.get(4);    // return 4
+        lRUCache.get(4);    // return 4*/
+
+        System.out.println(infixToPostfix("h^m^q^(7-4)"));
     }
 
 

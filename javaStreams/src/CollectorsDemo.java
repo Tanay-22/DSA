@@ -42,6 +42,7 @@ public class CollectorsDemo
 
         // 7. Couting Elements
         Long count = numbers.stream().collect(Collectors.counting());
+//        Long count = numbers.stream().count();
         System.out.println("Count: " + count);
 
         // 8. Grouping Elements
@@ -50,7 +51,7 @@ public class CollectorsDemo
         System.out.println(words.stream().collect(Collectors.groupingBy(String::length, Collectors.joining(","))));
         System.out.println(words.stream().collect(Collectors.groupingBy(String::length, Collectors.counting())));
         TreeMap<Integer, Long> treeMap = words.stream().collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.counting()));
-        System.out.println(treeMap);
+        System.out.println("TreeMap -> " + treeMap);
 
         // 9. Partitioning
         System.out.println(words.stream().collect(Collectors.partitioningBy(x -> x.length() > 5)));
